@@ -1,42 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap');
+/* @import "bootstrap/scss/bootstrap";  */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  position: relative;
+  max-width: 768px;
+  max-height: 1024px;
+  margin: 0px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
+
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} */
 
-.card {
+/* .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+} */
+
+/* Vista Vertical */
+.imageLogin{
+  height: 100%;
+  width: 768px;
+  margin: 0px;
 }
+
+.imageBackgroundLogin{
+  clip-path: polygon(0 0, 100% 0%, 100% 45%, 0 80%);
+  max-width: 768px;
+}
+
+.moduleLogin{
+  width: 572px;
+  height: 471px;
+  background-color: white;
+  border: 2px solid #E0E0E0;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+
+.title{
+  color: black;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: 31px;
+  margin-bottom: 0px;
+}
+.paragraphModule{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: #757575;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0px;
+}
+
+
+/* @media only screen and (max-device-width: 768px) and (orientation: portrait){
+    .imageLogin{
+      background-image: url(../public/img/backgroundLogin.jpeg);
+      height: 100%;
+      width: 100vw;
+      clip-path: polygon(0 0, 100% 0%, 100% 27%, 0 52%);
+    }
+
+  } */
+
+
+
