@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap');
-/* @import "bootstrap/scss/bootstrap";  */
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 #root {
   position: relative;
@@ -36,13 +36,14 @@
 
 /* Vista Vertical */
 .imageLogin{
-  height: 100%;
+  height: 91vh;
   width: 768px;
   margin: 0px;
+
 }
 
 .imageBackgroundLogin{
-  clip-path: polygon(0 0, 100% 0%, 100% 45%, 0 80%);
+  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
   max-width: 768px;
 }
 
@@ -55,7 +56,12 @@
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; 
+  box-shadow: -22px 47px 88px -68px rgba(0,0,0,0.64);
 }
 
 .title{
@@ -63,6 +69,7 @@
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-size: 31px;
   margin-bottom: 0px;
+  font-weight: 700;
 }
 .paragraphModule{
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
@@ -70,7 +77,50 @@
   font-weight: 400;
   font-size: 20px;
   margin: 0px;
+  margin-top: -20px;
 }
+
+#formInputUser{
+ display: flex;
+  width: 400px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+#formInputPassword{
+  display: flex;
+  width: 400px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+.rememberCheck{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 400;
+  margin: 0px;
+  margin-left: 5px!important;
+}
+
+#inputGroup{
+  width: 70%;
+  margin-top: -30px;
+}
+
+#buttonLogin{
+  color: white;
+  background-color: #EEA734; 
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  width: 400px;
+}
+
+.footer{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  position: relative;
+  bottom: 0;
+}
+
 
 
 /* @media only screen and (max-device-width: 768px) and (orientation: portrait){

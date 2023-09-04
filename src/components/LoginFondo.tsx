@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
-import backgroundImage from '/img/backgroundLogin.jpeg';
+import backgroundImage from '/img/backgroundLogin1.jpg';
 import { LoginInput } from './LoginInput';
+import { ButtonLogin } from './ButtonLogin';
 export const LoginFondo = () => {
 
   return (
@@ -12,9 +13,10 @@ export const LoginFondo = () => {
    <div className='moduleLogin'>
     <h2 className='title'>LogIn</h2>
     <p className='paragraphModule'>¡Bienvenido a tu administrador de pedidos!</p>
+    <LoginInput/>
+    <ButtonLogin/>
    </div>
-   <LoginInput/>
-
+  
     </Fragment>
 
   )
