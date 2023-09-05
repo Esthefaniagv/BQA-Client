@@ -101,7 +101,13 @@
 
 #inputGroup{
   width: 70%;
-  margin-top: -30px;
+}
+
+.inputForm{
+  height: 304px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #buttonLogin{
