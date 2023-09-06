@@ -1,32 +1,46 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
+import { LoginError } from './LoginError';
 
 export const LoginInput = () => {
-  const [message, setMessage] = useState('');
+  const submitForm = (e) => {
+    e.preventDefault()
 
-  const handleChange = event => {
-    setMessage(event.target.value);
+    const formData = new FormData(e.target);
+    const payLoad = Object.fromEntries(formData)
 
-    console.log('value is:', event.target.value);
+    console.log(payLoad);
+
+    try {
+      const options = {
+        method: "POST",
+        body: JSON.stringify(payLoad),
+        headers: {
+          "content-type": "application/json"
+        }
+      };
+      fetch("http://localhost:8080/login", options).then((r) => {
+        if(r.status === 200){
+          console.log('pasate a inicio')
+        }
+      }).catch((e) => {
+        console.log(e)
+      });
+    } catch (error) {
+      console.log('estas en el catch')
+    }
+
   };
 
-  const logMovies = async () => {
-    const options = {
-      method: "POST"
-    };
-    const response = await fetch("http://localhost:8080/login", options);
-    const movies = await response.json();
-    console.log(movies);
-  }
 
   return (
     <Fragment>
-      <form className='form-group inputForm'>
+      <form className='form-group inputForm' onSubmit={submitForm}>
         <div className='col-xs-1'>
-          <input className='form-control p-3 m-0' id="formInputUser" placeholder='Email' type='text' value={message} onChange={handleChange} />
+          <input className='form-control p-3 m-0' id="formInputUser" placeholder='Email' type='text' name='email' />
         </div>
 
         <div className='col-xs-1'>
-          <input className='form-control p-3 m-0' id="formInputPassword" placeholder='Contraseña' type='password' />
+          <input className='form-control p-3 m-0' id="formInputPassword" placeholder='Contraseña' type='password' name='password' />
         </div>
 
         <div className="input-group ml-5" id="inputGroup">
@@ -43,3 +57,5 @@ export const LoginInput = () => {
     </Fragment>
   );
 };
+
+export default LoginInput

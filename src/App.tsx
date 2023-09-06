@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-   <LoginFondo/> 
-   <Footer/>
+      <LoginFondo />
+      <Footer />
     </>
   )
 }
