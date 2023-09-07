@@ -1,7 +1,10 @@
-import { Fragment } from 'react';
-import { LoginError } from './LoginError';
+import { Fragment, useState } from 'react';
+import { LoginError } from './ErrorLogin';
 
 export const LoginInput = () => {
+
+  const [isError, setIsError] = useState(null);
+
   const submitForm = (e) => {
     e.preventDefault()
 
@@ -10,27 +13,26 @@ export const LoginInput = () => {
 
     console.log(payLoad);
 
-    try {
-      const options = {
-        method: "POST",
-        body: JSON.stringify(payLoad),
-        headers: {
-          "content-type": "application/json"
-        }
-      };
-      fetch("http://localhost:8080/login", options).then((r) => {
-        if(r.status === 200){
-          console.log('pasate a inicio')
-        }
-      }).catch((e) => {
-        console.log(e)
-      });
-    } catch (error) {
-      console.log('estas en el catch')
-    }
+    const options = {
+      method: "POST",
+      body: JSON.stringify(payLoad),
+      headers: {
+        "content-type": "application/json"
+      }
+    };
+    fetch("http://localhost:8080/login", options).then((r) => {
+      if (r.status === 200) {
+        console.log('pasate a inicio')
+      } else {
+        r.json().then(data => {
+          setIsError(data)
+        })
+      }
+    }).catch((e) => {
+      console.log('soy catch', e)
+    })
 
   };
-
 
   return (
     <Fragment>
@@ -54,6 +56,7 @@ export const LoginInput = () => {
           <button className="btn btn-lg" type="submit" value="Submit" id='buttonLogin'>Iniciar Sesión</button>
         </div>
       </form>
+      {isError && <LoginError message={isError}/>}
     </Fragment>
   );
 };

@@ -127,6 +127,12 @@
   bottom: 0;
 }
 
+.errorLogin{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #8B0000;
+}
 
 @media only screen and (max-device-width: 1024px) and (orientation: landscape){
   #root {
