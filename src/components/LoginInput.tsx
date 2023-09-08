@@ -1,9 +1,12 @@
 import { Fragment, useState } from 'react';
 import { LoginError } from './ErrorLogin';
+import { redirect, useNavigate } from 'react-router-dom';
+import { WaiterHome } from './WaiterHome';
 
 export const LoginInput = () => {
 
   const [isError, setIsError] = useState(null);
+  const navigate = useNavigate();
 
   const submitForm = (e) => {
     e.preventDefault()
@@ -11,8 +14,8 @@ export const LoginInput = () => {
     const formData = new FormData(e.target);
     const payLoad = Object.fromEntries(formData)
 
-    console.log(payLoad);
-
+   // console.log(payLoad);
+    
     const options = {
       method: "POST",
       body: JSON.stringify(payLoad),
@@ -22,9 +25,18 @@ export const LoginInput = () => {
     };
     fetch("http://localhost:8080/login", options).then((r) => {
       if (r.status === 200) {
-        console.log('pasate a inicio')
+      r.json().then((r)=>{
+      console.log(r.user.role)
+        if(r.user.role === 'waiter') {
+          navigate('/waiter')
+  
+        }
+
+        })
+
       } else {
         r.json().then(data => {
+          console.log(data)
           setIsError(data)
         })
       }

@@ -5,7 +5,7 @@ export const WaiterHome = () => {
     return (
         <Fragment>
             <div>
-                <p>hola waiter</p>
+                <p>Hola waiter</p>
             </div>
         </Fragment>
 

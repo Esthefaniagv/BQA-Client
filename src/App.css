@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap');
 
 #root {
   position: relative;
@@ -127,12 +128,52 @@
   bottom: 0;
 }
 
+.imageError{
+  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
+  width: 768px;
+  box-shadow: 10px 180px 123px 36px rgba(204,204,204,1);
+}
+
 .errorLogin{
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 300;
   font-size: 15px;
   color: #8B0000;
 }
+
+.paragraph404{
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: auto;
+  top: 25%;
+  left: 10%;
+  justify-content: space-between;
+}
+
+.paragraph404 p{
+  font-family: 'Rubik', sans-serif;
+  font-size: 250px;
+  color: #EEA734;
+  font-weight: bold;
+}
+
+.messageButtonError{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: auto;
+  height: 10%;
+  left: 25%;
+  bottom: 10%;
+}
+
+.messageButtonError p{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
 
 @media only screen and (max-device-width: 1024px) and (orientation: landscape){
   #root {
