@@ -1,19 +1,16 @@
 import { Fragment, useState } from 'react';
 import { LoginError } from './ErrorLogin';
-import { redirect, useNavigate } from 'react-router-dom';
-import { WaiterHome } from './WaiterHome';
+import { useNavigate } from 'react-router-dom';
 
-export const LoginInput = () => {
+export const LoginForm = () => {
 
   const [isError, setIsError] = useState(null);
   const navigate = useNavigate();
-
   const submitForm = (e) => {
     e.preventDefault()
 
     const formData = new FormData(e.target);
     const payLoad = Object.fromEntries(formData)
-
    // console.log(payLoad);
     
     const options = {
@@ -29,11 +26,8 @@ export const LoginInput = () => {
       console.log(r.user.role)
         if(r.user.role === 'waiter') {
           navigate('/waiter')
-  
         }
-
         })
-
       } else {
         r.json().then(data => {
           console.log(data)
@@ -43,7 +37,6 @@ export const LoginInput = () => {
     }).catch((e) => {
       console.log('soy catch', e)
     })
-
   };
 
   return (
@@ -72,5 +65,4 @@ export const LoginInput = () => {
     </Fragment>
   );
 };
-
-export default LoginInput
+export default LoginForm

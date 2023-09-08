@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import backgroundImage from '/img/backgroundLogin1.jpg';
-import { LoginInput } from './LoginInput';
-//import { ButtonLogin } from './ButtonLogin';
-export const LoginFondo = () => {
+import { LoginForm } from './LoginForm';
+
+export const Login = () => {
 
   return (
     <Fragment>
@@ -13,11 +13,11 @@ export const LoginFondo = () => {
       <div className='moduleLogin'>
         <h2 className='title'>LogIn</h2>
         <p className='paragraphModule'>¡Bienvenido a tu administrador de pedidos!</p>
-        <LoginInput />
-        {/* <ButtonLogin /> */}
+        <LoginForm />
       </div>
 
     </Fragment>
 
   )
 }
+export default Login
