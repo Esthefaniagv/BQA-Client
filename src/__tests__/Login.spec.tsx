@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react';
-// import backgroundImage from '/img/backgroundLogin1.jpg';
+import {BrowserRouter} from 'react-router-dom'
 
 import Login from '../components/Login';
 
 describe('App', () => {
   it('renders App component', () => {
- render(<Login />);
+ render(<Login/>, {wrapper: BrowserRouter});
   });
 });

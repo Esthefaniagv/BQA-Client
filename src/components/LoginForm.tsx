@@ -69,7 +69,6 @@ export const LoginForm = () => {
             type='checkbox'
             aria-label='Checkbox for following text input'
           />
-
           <p className='rememberCheck'>Remember me</p>
         </div>
 

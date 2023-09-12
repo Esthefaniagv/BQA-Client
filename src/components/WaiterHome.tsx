@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { ClientOrder } from './ClientOrder';
 import { MenuItems } from './MenuItems';
-import { Footer } from './Footer';
 
 export const WaiterHome = () => {
 
@@ -12,9 +11,6 @@ export const WaiterHome = () => {
 
             <ClientOrder/>
             <MenuItems/>
-            <Footer/>
-            
-
             </div>
         </Fragment>
 
