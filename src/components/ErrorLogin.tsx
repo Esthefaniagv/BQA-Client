@@ -6,3 +6,5 @@ export const LoginError = ({message}) => {
         </div>
     )
 }
+
+export default LoginError
