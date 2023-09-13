@@ -6,7 +6,7 @@ export const LoginForm = () => {
   const [isError, setIsError] = useState(null);
   const navigate = useNavigate();
 
-  const submitForm = (e) => {
+  const submitForm = (e) => { 
     e.preventDefault();
 
     const formData = new FormData(e.target);
@@ -43,9 +43,10 @@ export const LoginForm = () => {
 
   return (
     <Fragment>
-      <form className='form-group inputForm' onSubmit={submitForm}>
+      <form className='form-group inputForm' onSubmit={submitForm} data-testid='formLogin'>
         <div className='col-xs-1'>
           <input
+            data-testid='formInputUser'
             className='form-control p-3 m-0'
             id='formInputUser'
             placeholder='Email'
@@ -56,6 +57,7 @@ export const LoginForm = () => {
 
         <div className='col-xs-1'>
           <input
+            data-testid='formInputPassword'
             className='form-control p-3 m-0'
             id='formInputPassword'
             placeholder='Contraseña'
@@ -74,6 +76,7 @@ export const LoginForm = () => {
 
         <div>
           <button
+            data-testid='buttonLogin'
             className='btn btn-lg'
             type='submit'
             value='Submit'

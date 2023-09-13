@@ -174,6 +174,17 @@
   font-size: 20px;
 }
 
+/* Home Waiter */
+.unstyle{
+  all:unset;
+}
+
+.homeWaiterBtn{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  background-color: #87C159;
+  border-radius: 20px;
+}
+
 
 @media only screen and (max-device-width: 1024px) and (orientation: landscape){
   #root {
@@ -201,6 +212,9 @@
 .moduleLogin{
   top: 20%;
 }
+
+
+
 
 .footer{
   bottom: 10px;
