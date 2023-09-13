@@ -10,37 +10,18 @@
   text-align: center;
 }
 
-
-
-/* @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
-
-/* .card {
-  padding: 2em;
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  place-items: center;
 }
 
-.read-the-docs {
-  color: #888;
-} */
-
-/* Vista Vertical */
+/* LOGIN */
 .imageLogin{
   height: 91vh;
   width: 768px;
   margin: 0px;
-
 }
 
 .imageBackgroundLogin{
@@ -120,14 +101,6 @@
   width: 400px;
 }
 
-.footer{
-  font-family: 'Zen Kaku Gothic Antique', sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  position: relative;
-  bottom: 0;
-}
-
 .imageError{
   clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
   width: 768px;
@@ -185,6 +158,16 @@
   border-radius: 20px;
 }
 
+/* FOOTER */
+
+.footer{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  position: relative;
+  bottom: 0;
+}
+
 
 @media only screen and (max-device-width: 1024px) and (orientation: landscape){
   #root {
@@ -195,6 +178,8 @@
     padding: 0px;
     text-align: center;
 }
+
+/* LOGIN */
   .imageLogin{
     height: 95vh;
     width: 1024px;
@@ -213,9 +198,7 @@
   top: 20%;
 }
 
-
-
-
+/* FOOTER */
 .footer{
   bottom: 10px;
 }
