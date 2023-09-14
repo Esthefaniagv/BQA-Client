@@ -1,49 +1,42 @@
 import { Fragment, useState } from 'react';
 import { LoginError } from './ErrorLogin';
 import { useNavigate } from 'react-router-dom';
+import GetPostWaiter from '../services/TokenService';
 
 export const LoginForm = () => {
   const [isError, setIsError] = useState(null);
   const navigate = useNavigate();
 
-  const submitForm = (e) => { 
+  const SubmitForm = (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
     const payLoad = Object.fromEntries(formData);
-    // console.log(payLoad);
 
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(payLoad),
-      headers: {
-        'content-type': 'application/json',
-      },
-    };
-    fetch('http://localhost:8080/login', options)
-      .then((r) => {
-        if (r.status === 200) {
-          r.json().then((r) => {
-            console.log(r.user.role);
-            if (r.user.role === 'waiter') {
-              navigate('/waiter');
-            }
-          });
-        } else {
-          r.json().then((data) => {
-            console.log(data);
-            setIsError(data);
-          });
-        }
-      })
+    GetPostWaiter(payLoad).then((r) => {
+      if (r.status === 200) {
+        r.json().then((r) => {
+          console.log(r.user.role);
+          if (r.user.role === 'waiter') {
+            navigate('/waiter');
+          }
+        });
+      } else {
+        r.json().then((data) => {
+          console.log(data);
+          setIsError(data);
+        });
+      }
+    })
       .catch((e) => {
         console.log('soy catch', e);
       });
+  
   };
 
   return (
     <Fragment>
-      <form className='form-group inputForm' onSubmit={submitForm} data-testid='formLogin'>
+      <form className='form-group inputForm' onSubmit={SubmitForm} data-testid='formLogin'>
         <div className='col-xs-1'>
           <input
             data-testid='formInputUser'

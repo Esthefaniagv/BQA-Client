@@ -5,7 +5,7 @@ export const ItemsBox = () => {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
-      'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY5NDYwOTcwOSwiZXhwIjoxNjk0NjEzMzA5LCJzdWIiOiIyIn0.sR1Q5NgfCTa_5eM5EqjO1B_h_Qy7ScKZtJHzf95TAXI'
+      'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY5NDY5NTAwOSwiZXhwIjoxNjk0Njk4NjA5LCJzdWIiOiIyIn0.fZFWVHFBpAouO9r_iuSVd72MJl7chDHLdME-0VSfQ8s'
     },
   };
   fetch('http://localhost:8080/products', options)
