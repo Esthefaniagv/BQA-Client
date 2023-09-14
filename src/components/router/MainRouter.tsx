@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import { Login } from "../Login"
-import { WaiterHome } from "../WaiterHome"
+import { WaiterWelcome } from "../WaiterWelcome"
 import { ErrorRoute } from "../ErrorRoute"
 
 
@@ -11,7 +11,7 @@ export function MainRouter() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login/>}/>
-                <Route path="/waiter" element={<WaiterHome/>}/>
+                <Route path="/waiter" element={<WaiterWelcome/>}/>
                 <Route path="*" element={<ErrorRoute/>}           
                 />
             </Routes>
