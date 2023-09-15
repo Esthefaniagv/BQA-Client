@@ -183,6 +183,41 @@ body {
   font-weight: 500;
   color:#EEA734!important;
 }
+
+.menuItems{
+  width: 50%;
+  height: 40%;
+}
+
+.DivMenuItems{
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+.ProductImg{
+  width: 50%;
+  height: 20%;
+}
+.ProductImg img{
+  width: 100px;
+  height: 100px;
+}
+
+.ProductContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.clientOrder{
+  width: 40%;
+  height: 40%;
+}
+.iconsOrder{
+  display: flex;
+  width: 300px;
+  height: 80px;
+}
 /* FOOTER */
 
 .footer{

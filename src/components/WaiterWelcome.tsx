@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
-import { ClientOrder } from './ClientOrder';
-import { MenuItems } from './MenuItems';
 import ClientName from './ClientName';
+import DivMenuItems from './DivMenuItems';
 
 export const WaiterWelcome = () => {
 
@@ -15,8 +14,7 @@ export const WaiterWelcome = () => {
                 </svg></button>
                 </div>
                 <ClientName/>
-                <ClientOrder />
-                <MenuItems />
+                <DivMenuItems/>
             </div>
         </Fragment>
 

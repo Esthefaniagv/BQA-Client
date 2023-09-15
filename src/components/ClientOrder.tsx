@@ -4,7 +4,7 @@ import { ItemsBoxResume } from "./ItemsBoxResume"
 export const ClientOrder = () => {
   return (
     <Fragment>
-    <div>ClientOrder
+    <div className="clientOrder">ClientOrder
     <ItemsBoxResume/>
     </div>
     </Fragment>
