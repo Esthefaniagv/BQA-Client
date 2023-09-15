@@ -1,29 +1,61 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+import GetProducts from "../services/TokenProducts";
 
 export const ItemsBox = () => {
-  const options = {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-      'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY5NDYwOTcwOSwiZXhwIjoxNjk0NjEzMzA5LCJzdWIiOiIyIn0.sR1Q5NgfCTa_5eM5EqjO1B_h_Qy7ScKZtJHzf95TAXI'
-    },
+
+  let IProduct: {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    type: string;
+    dateEntry: string;
   };
-  fetch('http://localhost:8080/products', options)
-    .then((r) => {
-      if (r.status === 200) {
-        r.json().then((r) => {
-          console.log(r);
-        });
-      } 
-    })
-    .catch((e) => {
-      console.log('soy catch', e);
-    });
+  const [products, setProducts] = useState<typeof IProduct[]>([]);
+
+  useEffect(() => {
+    GetAllProducts();
+  }, [])
+
+  const GetAllProducts = () => {
+    GetProducts()
+      .then((r) => {
+        if (r.status === 200) {
+          r.json().then((data) => {
+            console.log(data)
+            setProducts(data)
+          });
+        }
+      })
+      .catch((e) => {
+        console.log('soy catch', e);
+      });
+  }
+
+  console.log({ products })
 
   return (
     <Fragment>
-    hola
+      <section>
+        <div className="ProductContainer">
+          {products.map((product) => {
+            return (
+              <>
+              <div className="ProductImg">
+                <img src={product.image} alt='imagen de producto' />
+              </div>
+              <div className="ProductInfo">
+                <p>{product.name}</p>
+                <p>{product.price}</p>
+                <button>Agregar</button>
+              </div>
+              </>
+            )
+          })};
+        </div>
+      </section>
+
     </Fragment>
-)
+  )
 
 };
