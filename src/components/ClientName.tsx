@@ -1,8 +1,6 @@
 import { Fragment, useState} from "react"
-import { ItemsBoxResume } from "./ItemsBoxResume"
 
-
-export const ClientOrder = ({ selectedProduct }) => {
+export const ClientName = () => {
   const [clientName, setClientName] = useState('');
 
   //const [selectedProduct, setSelectedProduct] = useState(null);
@@ -14,14 +12,15 @@ export const ClientOrder = ({ selectedProduct }) => {
     
   return (
     <Fragment>
-      <div className="clientOrder">
+      <div className="clientName">
       <div className="input-group mb-3">
         <input value={clientName} onChange={handleClientName} type="text" className="form-control" placeholder="Escribe nombre de cliente aquí" aria-label="Username" aria-describedby="basic-addon1" />
       </div>
-      ClientOrder
-        <p>{clientName}</p>
-        <ItemsBoxResume selectedProduct={selectedProduct} />
       </div>
+      
+        {/* <p>{clientName}</p> */}
+        {/* <ItemsBoxResume selectedProduct={selectedProduct} /> */}
+      {/* </div> */}
     </Fragment>
   )
 }

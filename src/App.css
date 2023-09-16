@@ -166,11 +166,17 @@ body {
 }
 
 .welcomeContainer{
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.divSections{
+  display: flex;
+  margin-left: 40px;
+  justify-content: space-between;
 }
 
 .titleWaiterHome{
@@ -178,7 +184,7 @@ body {
   font-weight: 700;
   font-size: 40px;
   color:#757575;
-  margin: 0px 0px 0px 170px;
+  margin: 0px 0px 0px 230px;
 }
 
 .menuNav{
@@ -187,19 +193,31 @@ body {
   color:#EEA734!important;
 }
 
-.menuItems{
-  width: 50%;
-  height: 40%;
+.divItemsNav{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 140px;
+  height: 29px;
+  align-items: center;
+  margin-bottom: 28px;
 }
 
 .DivMenuItems{
-
   display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 
+.titleOrder{
+  margin: 0px;
+  font-size: 20px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+}
 .navItems{
-  margin-left: 10px;
+  margin-right: 0;
+  font-size: 20px;
 }
 
 .ProductImg{
@@ -228,7 +246,7 @@ body {
   width: 304px;
   height: 149px;
   border: 1px solid #87C159;
-  margin-top: 30px;
+  margin-bottom: 19px;
   border-radius: 30px;
 }
 
@@ -263,15 +281,49 @@ body {
   border: 1px solid #EEA734;
 }
 
-.clientOrder{
+.clientName{
   width: 40%;
   height: 40%;
+  margin-left: 50px;
+  margin-bottom: 26px;
 }
-.iconsOrder{
-  display: flex;
+
+
+/* Resumen Pedido Home Waiter */
+.divItemsResume{
   width: 300px;
-  height: 80px;
+  display: flex;
+  flex-direction: column;
 }
+  .productImgResume{
+    width: 288px;
+    height: 70px;
+    display: flex;
+  }
+.productImgResume img{
+  width: 70px;
+  height: 70px;
+  border: 1px solid #EEA734;
+  border-radius: 20px;
+  padding: 10px;
+}
+.divIconsResume{
+  display: flex;
+  justify-content: space-around;
+  margin-top: -18px;
+}
+
+.nameProductResume{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+}
+.iconsPlusLess{
+  display: flex;
+  margin-left: 50px;
+  margin-right: 70px;
+  align-items: baseline;
+}
+
 /* FOOTER */
 
 .footer{

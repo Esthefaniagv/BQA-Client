@@ -1,9 +1,11 @@
-import { Fragment, useEffect, useState } from "react";
-import GetProducts from "../services/TokenProducts";
-import { ClientOrder } from "./ClientOrder";
+import { Fragment, useEffect, useState } from 'react';
+import GetProducts from '../services/TokenProducts';
+import { ClientOrder } from './ClientName';
+import { ClientName } from './router/ClientName';
+import { MenuItems } from './MenuItems';
+import { ItemsBoxResume } from './ItemsBoxResume';
 
 export const ItemsBox = () => {
-
   let IProduct: {
     id: number;
     name: string;
@@ -12,59 +14,69 @@ export const ItemsBox = () => {
     type: string;
     dateEntry: string;
   };
-  const [products, setProducts] = useState<typeof IProduct[]>([]);
+  const [products, setProducts] = useState<(typeof IProduct)[]>([]);
 
-   const [selectedProduct, setSelectedProduct] = useState< typeof IProduct | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<
+    typeof IProduct | null
+  >(null);
 
   //Muestra producto seleccionado
   //console.log(1111, selectedProduct);
 
   useEffect(() => {
     GetAllProducts();
-  }, [])
+  }, []);
 
   const GetAllProducts = () => {
     GetProducts()
       .then((r) => {
         if (r.status === 200) {
           r.json().then((data) => {
-            console.log(data)
-            setProducts(data)
+            console.log(data);
+            setProducts(data);
           });
         }
       })
       .catch((e) => {
         console.log('soy catch', e);
       });
-  }
+  };
 
-  console.log({ products })
+  console.log({ products });
 
   return (
     <Fragment>
-      <section>
-      
-        <div className="ProductContainer">
-          {products.map((product) => {
-            return (
-              <>
-              <div className="ProductImgInfo" key={product.id}>
-              <div className="ProductImg">
-                <img src={product.image} alt='imagen de producto' />
-              </div>
-              <div className="productInfo">
-                <p className="nameProduct">{product.name}</p>
-                <p className="priceProduct">${product.price}</p>
-                <button className="addProduct" type='button' onClick={()=> setSelectedProduct(product)}> Agregar </button>
-              </div>
-              </div>
-              </>
-            )
-          })}
-        </div>
-      </section>
-      <ClientOrder selectedProduct={selectedProduct}/>
+      <div className='divSections'>
+        <section>
+          <div className='ProductContainer'>
+            {products.map((product) => {
+              return (
+                <>
+                  <div className='ProductImgInfo' key={product.id}>
+                    <div className='ProductImg'>
+                      <img src={product.image} alt='imagen de producto' />
+                    </div>
+                    <div className='productInfo'>
+                      <p className='nameProduct'>{product.name}</p>
+                      <p className='priceProduct'>${product.price}</p>
+                      <button
+                        className='addProduct'
+                        type='button'
+                        onClick={() => setSelectedProduct(product)}
+                      >
+                        {' '}
+                        Agregar{' '}
+                      </button>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </section>
+        {/* <ClientOrder selectedProduct={selectedProduct}/> */}
+        <ItemsBoxResume selectedProduct={selectedProduct} />
+      </div>
     </Fragment>
-  )
-
+  );
 };
