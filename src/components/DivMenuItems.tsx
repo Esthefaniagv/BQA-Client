@@ -1,18 +1,15 @@
-import { ClientOrder } from "./ClientOrder"
-import { MenuItems } from "./MenuItems"
 
+// import { ItemsBox } from "./ItemsBox"
 
-export const DivMenuItems = () => {
+// export const DivMenuItems = () => {
+//   return (
+//     <>
+//       <div className='DivMenuItems'>
+      
+   
+//       </div>
+//     </>
+//   );
+// };
 
-    return (
-        <>
-            <div className="DivMenuItems">
-                <ClientOrder />
-                <MenuItems />
-            </div>
-
-        </>
-    )
-}
-
-export default DivMenuItems;
+// export default DivMenuItems;

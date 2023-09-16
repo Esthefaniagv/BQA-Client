@@ -151,7 +151,8 @@ body {
 
 .waiterHome{
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+
 }
 .unstyle{
   all:unset;
@@ -159,8 +160,9 @@ body {
 
 .homeWaiterBtn{
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
-  background-color: #87C159;
+  font-size: 20px;
   border-radius: 20px;
+  text-decoration: underline #87C159;
 }
 
 .welcomeContainer{
@@ -174,9 +176,10 @@ body {
 .titleWaiterHome{
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
+  font-size: 40px;
+  color:#757575;
+  margin: 0px 0px 0px 170px;
 }
-
-
 
 .menuNav{
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
@@ -192,21 +195,72 @@ body {
 .DivMenuItems{
 
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-around;
 }
+
+.navItems{
+  margin-left: 10px;
+}
+
 .ProductImg{
-  width: 50%;
-  height: 20%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
 }
 .ProductImg img{
   width: 100px;
   height: 100px;
+  border: 1px solid #EEA734;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .ProductContainer{
   display: flex;
   flex-direction: column;
+}
+
+.ProductImgInfo{
+  display: flex;
+  border-color: #87C159;
+  width: 304px;
+  height: 149px;
+  border: 1px solid #87C159;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+
+.productInfo{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nameProduct{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  margin: 20px 0px 0px 0px;
+}
+
+.priceProduct{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif; 
+  font-weight: 500;
+}
+
+.addProduct{
+  color: white;
+  background-color: #EEA734;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  width: 111px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid #EEA734;
 }
 
 .clientOrder{
@@ -256,6 +310,27 @@ body {
 
 .moduleLogin{
   top: 20%;
+}
+
+/* HOME WAITER */
+
+.waiterHome{
+  height: 100%;
+}
+
+.welcomeContainer{
+  height: 100px;
+}
+
+.titleWaiterHome{
+  margin: 0px 0px 0px 284px;
+}
+
+.navItems{
+  margin-left: 53px;
+}
+.ProductImgInfo{
+  margin-left: 40px;
 }
 
 /* FOOTER */

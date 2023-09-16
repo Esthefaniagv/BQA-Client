@@ -2,15 +2,16 @@ import { Fragment, useState} from "react"
 import { ItemsBoxResume } from "./ItemsBoxResume"
 
 
-
-export const ClientOrder = () => {
+export const ClientOrder = ({ selectedProduct }) => {
   const [clientName, setClientName] = useState('');
+
+  //const [selectedProduct, setSelectedProduct] = useState(null);
 
 
     const handleClientName = (e) =>{
         setClientName(e.target.value)
     }
-
+    
   return (
     <Fragment>
       <div className="clientOrder">
@@ -19,7 +20,7 @@ export const ClientOrder = () => {
       </div>
       ClientOrder
         <p>{clientName}</p>
-        <ItemsBoxResume />
+        <ItemsBoxResume selectedProduct={selectedProduct} />
       </div>
     </Fragment>
   )

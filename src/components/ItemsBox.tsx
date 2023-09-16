@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import GetProducts from "../services/TokenProducts";
+import { ClientOrder } from "./ClientOrder";
 
 export const ItemsBox = () => {
 
@@ -12,6 +13,11 @@ export const ItemsBox = () => {
     dateEntry: string;
   };
   const [products, setProducts] = useState<typeof IProduct[]>([]);
+
+   const [selectedProduct, setSelectedProduct] = useState< typeof IProduct | null>(null);
+
+  //Muestra producto seleccionado
+  //console.log(1111, selectedProduct);
 
   useEffect(() => {
     GetAllProducts();
@@ -37,24 +43,27 @@ export const ItemsBox = () => {
   return (
     <Fragment>
       <section>
+      
         <div className="ProductContainer">
           {products.map((product) => {
             return (
               <>
+              <div className="ProductImgInfo" key={product.id}>
               <div className="ProductImg">
                 <img src={product.image} alt='imagen de producto' />
               </div>
-              <div className="ProductInfo">
-                <p>{product.name}</p>
-                <p>{product.price}</p>
-                <button>Agregar</button>
+              <div className="productInfo">
+                <p className="nameProduct">{product.name}</p>
+                <p className="priceProduct">${product.price}</p>
+                <button className="addProduct" type='button' onClick={()=> setSelectedProduct(product)}> Agregar </button>
+              </div>
               </div>
               </>
             )
-          })};
+          })}
         </div>
       </section>
-
+      <ClientOrder selectedProduct={selectedProduct}/>
     </Fragment>
   )
 

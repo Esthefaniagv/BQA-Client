@@ -1,13 +1,19 @@
-export const ItemsBoxResume = () => {
+import { IProduct } from "./ItemsBox";
+
+export const ItemsBoxResume = ({ selectedProduct }: { selectedProduct: IProduct | null }) => {
   return (
     <>
       <section>
-        <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <p>Nombre producto</p>
-          <p>$500</p>
+      <div className="divReplicado">
+          {selectedProduct && (
+            <>
+              <img src={selectedProduct.image} alt= "imagen Producto" />
+              <div>
+                <p>{selectedProduct.name}</p>
+                <p>${selectedProduct.price}</p>
+              </div>
+            </>
+          )}
         </div>
         <div className="iconsOrder">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus-circle-fill" viewBox="0 0 16 16">
