@@ -1,11 +1,16 @@
-import { Fragment } from 'react';
 import { ItemsBox } from './ItemsBox';
-import { ClientName } from './ClientName';
+import { Fragment, useState } from 'react';
 
 export const MenuItems = () => {
+
+    const [clientName, setClientName] = useState('');
+
+    const handleClientName = (e) =>{
+        setClientName(e.target.value)
+    }
+
   return (
     <Fragment>
-      <ClientName/>
       <div className='menuItems'>
         <div className='divItemsNav'>
           <ul className='nav nav-underline navItems'>
@@ -24,10 +29,16 @@ export const MenuItems = () => {
               </a>
             </li>
           </ul>
-          <p className='titleOrder'>Cuenta</p>
+          <p className='titleOrder'>Cuenta:</p>
+          <div className="clientName">
+       <div className="input-group mb-3">
+         <input value={clientName} onChange={handleClientName} type="text" className="form-control" placeholder="Escribe nombre de cliente aquí" aria-label="Username" aria-describedby="basic-addon1" />
+       </div>
+       </div>
         </div>
         <ItemsBox />
       </div>
+    
     </Fragment>
   );
 };

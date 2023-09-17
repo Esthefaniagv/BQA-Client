@@ -197,7 +197,6 @@ body {
   display: flex;
   justify-content: space-between;
   margin-left: 50px;
-  margin-right: 140px;
   height: 29px;
   align-items: center;
   margin-bottom: 28px;
@@ -214,6 +213,7 @@ body {
   font-size: 20px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
+  margin-left: 100px;
 }
 .navItems{
   margin-right: 0;
@@ -282,14 +282,19 @@ body {
 }
 
 .clientName{
-  width: 40%;
+  width: 35%;
   height: 40%;
-  margin-left: 50px;
   margin-bottom: 26px;
+  margin-right: 20px;
 }
 
 
 /* Resumen Pedido Home Waiter */
+.sectionItemsResume{
+  display: flex;
+  flex-direction: column;
+}
+
 .divItemsResume{
   width: 300px;
   display: flex;
@@ -310,7 +315,7 @@ body {
 .divIconsResume{
   display: flex;
   justify-content: space-around;
-  margin-top: -18px;
+  margin-top: -24px;
 }
 
 .nameProductResume{
@@ -322,6 +327,44 @@ body {
   margin-left: 50px;
   margin-right: 70px;
   align-items: baseline;
+}
+.buttonDecrease{
+  border: none;
+  background-color: white;
+}
+
+.buttonIncrease{
+  border: none;
+  background-color: white;
+}
+
+.dots{
+  margin: 0;
+  width: 272px;
+  color: #757575;
+}
+.divParagraph{
+  display: flex;
+  justify-content: space-between;
+}
+.totaltext{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  text-align: start;  
+}
+.totalResult{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  margin-right: 38px;
+}
+
+#buttonOrderChefView{
+  color: white;
+  background-color: #EEA734; 
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  width: 265px;
 }
 
 /* FOOTER */
@@ -379,11 +422,29 @@ body {
 }
 
 .navItems{
-  margin-left: 53px;
+  margin-left: 40px;
 }
 .ProductImgInfo{
   margin-left: 40px;
 }
+
+.clientName{
+  margin-right: 39px;
+}
+
+.titleOrder{
+  margin-left: 194px;
+}
+
+/* Resumen pedido Waiter */
+.divItemsResume{
+  margin-right: 70px;
+}
+
+.totalResult{
+  margin-right: 108px;
+}
+
 
 /* FOOTER */
 .footer{

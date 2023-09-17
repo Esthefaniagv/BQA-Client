@@ -1,8 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
 import GetProducts from '../services/TokenProducts';
-import { ClientOrder } from './ClientName';
-import { ClientName } from './router/ClientName';
-import { MenuItems } from './MenuItems';
 import { ItemsBoxResume } from './ItemsBoxResume';
 
 export const ItemsBox = () => {
@@ -13,12 +10,18 @@ export const ItemsBox = () => {
     image: string;
     type: string;
     dateEntry: string;
+    qty: number;
   };
   const [products, setProducts] = useState<(typeof IProduct)[]>([]);
 
-  const [selectedProduct, setSelectedProduct] = useState<
-    typeof IProduct | null
-  >(null);
+  //seleccionar el id, guardarlo y mostrarlo en itemsBoxResume
+  const [selectedProduct, setSelectedProduct] = useState<typeof IProduct[]>([]);
+
+  // Para que se agreguen varios productos
+  const addSelectedProduct = (product: typeof IProduct) => {
+    product.qty = 1
+    setSelectedProduct([...selectedProduct, product]);
+  };
 
   //Muestra producto seleccionado
   //console.log(1111, selectedProduct);
@@ -62,10 +65,9 @@ export const ItemsBox = () => {
                       <button
                         className='addProduct'
                         type='button'
-                        onClick={() => setSelectedProduct(product)}
+                        onClick={() => addSelectedProduct(product)}
                       >
-                        {' '}
-                        Agregar{' '}
+                        Agregar
                       </button>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { MenuItems } from './MenuItems';
 
+
 export const WaiterWelcome = () => {
 
     return (
@@ -13,6 +14,7 @@ export const WaiterWelcome = () => {
                 </svg></button>
                 </div>
                 <hr/>
+                
                <MenuItems/>
             </div>
         </Fragment>
