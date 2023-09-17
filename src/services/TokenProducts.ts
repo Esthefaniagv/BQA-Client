@@ -3,7 +3,7 @@ export const GetProducts = () => {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
-            'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY5NDc5MzY2MSwiZXhwIjoxNjk0Nzk3MjYxLCJzdWIiOiIyIn0.Qm8st7ttE4Dv_G6xr6XLnSZ7Vx4djUZFvSuFuoxbVCE'
+            'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY5NDkxODExNCwiZXhwIjoxNjk0OTIxNzE0LCJzdWIiOiIyIn0.JWbAskzKIWmVy7WcTb_4YsUfBtO0VOLvLyHnNSFIMcg'
         },
     };
     return fetch('http://localhost:8080/products', options);
