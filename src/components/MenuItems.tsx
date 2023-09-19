@@ -1,13 +1,9 @@
 import { ItemsBox } from './ItemsBox';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 
 export const MenuItems = () => {
 
-    const [clientName, setClientName] = useState('');
 
-    const handleClientName = (e) =>{
-        setClientName(e.target.value)
-    }
 
   return (
     <Fragment>
@@ -23,22 +19,20 @@ export const MenuItems = () => {
                 Desayuno
               </a>
             </li>
-            <li className='nav-item '>
-              <a className='nav-link menuNav' href='#'>
-                Almuerzo y Cena
-              </a>
-            </li>
           </ul>
-          <p className='titleOrder'>Cuenta:</p>
-          <div className="clientName">
-       <div className="input-group mb-3">
-         <input value={clientName} onChange={handleClientName} type="text" className="form-control" placeholder="Escribe nombre de cliente aquí" aria-label="Username" aria-describedby="basic-addon1" />
-       </div>
-       </div>
+          <p className='titleOrder unstyle'>Cuenta:</p>
         </div>
         <ItemsBox />
       </div>
-    
+
     </Fragment>
   );
 };
+
+
+
+{/* <li className='nav-item '>
+  <a className='nav-link menuNav' href='#'>
+    Almuerzo y Cena
+  </a>
+</li> */}

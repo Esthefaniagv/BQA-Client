@@ -17,19 +17,21 @@ body {
   place-items: center;
 }
 
+
+
 /* LOGIN */
-.imageLogin{
+.imageLogin {
   height: 91vh;
   width: 768px;
   margin: 0px;
 }
 
-.imageBackgroundLogin{
+.imageBackgroundLogin {
   clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
   max-width: 768px;
 }
 
-.moduleLogin{
+.moduleLogin {
   width: 572px;
   height: 471px;
   background-color: white;
@@ -42,18 +44,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly; 
-  box-shadow: -22px 47px 88px -68px rgba(0,0,0,0.64);
+  justify-content: space-evenly;
+  box-shadow: -22px 47px 88px -68px rgba(0, 0, 0, 0.64);
 }
 
-.title{
+.title {
   color: black;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-size: 31px;
   margin-bottom: 0px;
   font-weight: 700;
 }
-.paragraphModule{
+
+.paragraphModule {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   color: #757575;
   font-weight: 400;
@@ -62,59 +65,59 @@ body {
   margin-top: -20px;
 }
 
-#formInputUser{
+#formInputUser {
   display: flex;
   width: 400px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-#formInputPassword{
+#formInputPassword {
   display: flex;
   width: 400px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-.rememberCheck{
+.rememberCheck {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 400;
   margin: 0px;
-  margin-left: 5px!important;
+  margin-left: 5px !important;
 }
 
-#inputGroup{
+#inputGroup {
   width: 70%;
 }
 
-.inputForm{
+.inputForm {
   height: 304px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-#buttonLogin{
+#buttonLogin {
   color: white;
-  background-color: #EEA734; 
+  background-color: #EEA734;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 500;
   font-size: 20px;
   width: 400px;
 }
 
-.imageError{
+.imageError {
   clip-path: polygon(0 0, 100% 0%, 100% 60%, 0 100%);
   width: 768px;
-  box-shadow: 10px 180px 123px 36px rgba(204,204,204,1);
+  box-shadow: 10px 180px 123px 36px rgba(204, 204, 204, 1);
 }
 
-.errorLogin{
+.errorLogin {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 300;
   font-size: 15px;
   color: #8B0000;
 }
 
-.paragraph404{
+.paragraph404 {
   position: absolute;
   display: flex;
   width: 80%;
@@ -124,14 +127,14 @@ body {
   justify-content: space-between;
 }
 
-.paragraph404 p{
+.paragraph404 p {
   font-family: 'Rubik', sans-serif;
   font-size: 250px;
   color: #EEA734;
   font-weight: bold;
 }
 
-.messageButtonError{
+.messageButtonError {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -141,7 +144,7 @@ body {
   bottom: 10%;
 }
 
-.messageButtonError p{
+.messageButtonError p {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 300;
   font-size: 20px;
@@ -149,23 +152,24 @@ body {
 
 /* Home Waiter */
 
-.waiterHome{
+.waiterHome {
   width: 100vw;
   height: 100%;
 
 }
-.unstyle{
-  all:unset;
+
+.unstyle {
+  all: unset;
 }
 
-.homeWaiterBtn{
+.homeWaiterBtn {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-size: 20px;
   border-radius: 20px;
   text-decoration: underline #87C159;
 }
 
-.welcomeContainer{
+.welcomeContainer {
   height: 100px;
   display: flex;
   justify-content: space-around;
@@ -173,61 +177,65 @@ body {
 }
 
 
-.divSections{
+.divSections {
   display: flex;
   margin-left: 40px;
   justify-content: space-between;
 }
 
-.titleWaiterHome{
+.titleWaiterHome {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
   font-size: 40px;
-  color:#757575;
+  color: #757575;
   margin: 0px 0px 0px 230px;
 }
 
-.menuNav{
+.menuNav {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 500;
-  color:#EEA734!important;
+  color: #EEA734 !important;
 }
 
-.divItemsNav{
+.divItemsNav {
   display: flex;
   justify-content: space-between;
   margin-left: 50px;
   height: 29px;
   align-items: center;
   margin-bottom: 28px;
+  /* margin-right: 34%; */
+  width: 50%;
 }
 
-.DivMenuItems{
+.DivMenuItems {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.titleOrder{
+.titleOrder {
   margin: 0px;
   font-size: 20px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
   margin-left: 100px;
 }
-.navItems{
+
+.navItems {
   margin-right: 0;
   font-size: 20px;
 }
 
-.ProductImg{
+.ProductImg {
   width: 150px;
   height: 150px;
   display: flex;
   align-items: center;
   margin-left: 20px;
 }
-.ProductImg img{
+
+.ProductImg img {
   width: 100px;
   height: 100px;
   border: 1px solid #EEA734;
@@ -235,12 +243,12 @@ body {
   padding: 10px;
 }
 
-.ProductContainer{
+.ProductContainer {
   display: flex;
   flex-direction: column;
 }
 
-.ProductImgInfo{
+.ProductImgInfo {
   display: flex;
   border-color: #87C159;
   width: 304px;
@@ -250,7 +258,7 @@ body {
   border-radius: 30px;
 }
 
-.productInfo{
+.productInfo {
   width: 80%;
   height: 100%;
   display: flex;
@@ -258,18 +266,19 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.nameProduct{
+
+.nameProduct {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
   margin: 20px 0px 0px 0px;
 }
 
-.priceProduct{
-  font-family: 'Zen Kaku Gothic Antique', sans-serif; 
+.priceProduct {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 500;
 }
 
-.addProduct{
+.addProduct {
   color: white;
   background-color: #EEA734;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
@@ -281,86 +290,102 @@ body {
   border: 1px solid #EEA734;
 }
 
-.clientName{
-  width: 35%;
+.clientName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  /* width: 35%;
   height: 40%;
   margin-bottom: 26px;
-  margin-right: 20px;
+  margin-right: 20px; */
 }
 
 
 /* Resumen Pedido Home Waiter */
-.sectionItemsResume{
+.sectionItemsResume {
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
+  position: relative;
+  bottom: 58px;
 }
 
-.divItemsResume{
+.divItemsResume {
   width: 300px;
   display: flex;
   flex-direction: column;
 }
-  .productImgResume{
-    width: 288px;
-    height: 70px;
-    display: flex;
-  }
-.productImgResume img{
+
+.productImgResume {
+  width: 280px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productImgResume img {
   width: 70px;
   height: 70px;
   border: 1px solid #EEA734;
   border-radius: 20px;
   padding: 10px;
 }
-.divIconsResume{
+
+.divIconsResume {
   display: flex;
   justify-content: space-around;
   margin-top: -24px;
 }
 
-.nameProductResume{
+.nameProductResume {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
 }
-.iconsPlusLess{
+
+.iconsPlusLess {
   display: flex;
   margin-left: 50px;
   margin-right: 70px;
   align-items: baseline;
 }
-.buttonDecrease{
+
+.buttonDecrease {
   border: none;
   background-color: white;
 }
 
-.buttonIncrease{
+.buttonIncrease {
   border: none;
   background-color: white;
 }
 
-.dots{
+.dots {
   margin: 0;
   width: 272px;
   color: #757575;
 }
-.divParagraph{
+
+.divParagraph {
   display: flex;
   justify-content: space-between;
 }
-.totaltext{
+
+.totaltext {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
-  text-align: start;  
+  text-align: start;
 }
-.totalResult{
+
+.totalResult {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 700;
   margin-right: 38px;
 }
 
-#buttonOrderChefView{
+#buttonOrderChefView {
   color: white;
-  background-color: #EEA734; 
+  background-color: #EEA734;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 500;
   font-size: 20px;
@@ -369,7 +394,7 @@ body {
 
 /* FOOTER */
 
-.footer{
+.footer {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-weight: 300;
   font-size: 15px;
@@ -378,7 +403,7 @@ body {
 }
 
 
-@media only screen and (max-device-width: 1024px) and (orientation: landscape){
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
   #root {
     position: relative;
     max-width: 1024px;
@@ -386,71 +411,69 @@ body {
     margin: 0;
     padding: 0px;
     text-align: center;
-}
+  }
 
-/* LOGIN */
-  .imageLogin{
+  /* LOGIN */
+  .imageLogin {
     height: 95vh;
     width: 1024px;
     margin: 0px;
-}
+  }
 
-.imageBackgroundLogin {
-  clip-path: polygon(0 0, 100% 0%, 100% 54%, 0 84%);
-  max-width: 100vw;
-  margin: 0;
-  height: 80%;
-  padding: 0;
-}
+  .imageBackgroundLogin {
+    clip-path: polygon(0 0, 100% 0%, 100% 54%, 0 84%);
+    max-width: 100vw;
+    margin: 0;
+    height: 80%;
+    padding: 0;
+  }
 
-.moduleLogin{
-  top: 20%;
-}
+  .moduleLogin {
+    top: 20%;
+  }
 
-/* HOME WAITER */
+  /* HOME WAITER */
 
-.waiterHome{
-  height: 100%;
-}
+  .waiterHome {
+    height: 100%;
+  }
 
-.welcomeContainer{
-  height: 100px;
-}
+  .welcomeContainer {
+    height: 100px;
+  }
 
-.titleWaiterHome{
-  margin: 0px 0px 0px 284px;
-}
+  .titleWaiterHome {
+    margin: 0px 0px 0px 284px;
+  }
 
-.navItems{
-  margin-left: 40px;
-}
-.ProductImgInfo{
-  margin-left: 40px;
-}
+  .navItems {
+    margin-left: 40px;
+  }
 
-.clientName{
-  margin-right: 39px;
-}
+  .ProductImgInfo {
+    margin-left: 40px;
+  }
 
-.titleOrder{
-  margin-left: 194px;
-}
+  .clientName {
+    margin-right: 39px;
+  }
 
-/* Resumen pedido Waiter */
-.divItemsResume{
-  margin-right: 70px;
-}
+  .titleOrder {
+    margin-left: 194px;
+  }
 
-.totalResult{
-  margin-right: 108px;
-}
+  /* Resumen pedido Waiter */
+  .divItemsResume {
+    margin-right: 70px;
+  }
 
-
-/* FOOTER */
-.footer{
-  bottom: 10px;
-}
+  .totalResult {
+    margin-right: 108px;
   }
 
 
-
+  /* FOOTER */
+  .footer {
+    bottom: 10px;
+  }
+}
