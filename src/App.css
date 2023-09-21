@@ -224,7 +224,7 @@ body {
 
 .navItems {
   margin-right: 0;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .ProductImg {
@@ -434,6 +434,10 @@ body {
 
   /* HOME WAITER */
 
+  /* .ProductContainer{
+    overflow: scroll;
+  } */
+
   .waiterHome {
     height: 100%;
   }
@@ -448,6 +452,8 @@ body {
 
   .navItems {
     margin-left: 40px;
+    font-size: 15px;
+
   }
 
   .ProductImgInfo {

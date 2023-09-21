@@ -17,14 +17,56 @@ export const ItemsBox = () => {
   //seleccionar el id, guardarlo y mostrarlo en itemsBoxResume
   const [selectedProduct, setSelectedProduct] = useState<typeof IProduct[]>([]);
 
-  // Para que se agreguen varios productos
+  //guardar valor de cuenta total 
+  const [total, setTotal] = useState(0)
+
+  // Para que se agreguen varios productos en la orden de pedido 
   const addSelectedProduct = (product: typeof IProduct) => {
-    product.qty = 1
-    setSelectedProduct([...selectedProduct, product]);
+    if (selectedProduct.some(x => x.id === product.id)) {
+      setSelectedProduct((prevState) => ([
+        ...prevState.map((currentProduct) => ({
+          ...currentProduct,
+          qty: currentProduct.qty + 1
+        }))
+      ]))
+      // setSelectedProduct([...selectedProduct])
+    } else {
+      setSelectedProduct([...selectedProduct, {
+        ...product,
+        qty: 1
+      }]);
+    }
+
   };
 
-  //Muestra producto seleccionado
-  //console.log(1111, selectedProduct);
+  const modifyQty = (selectedProductIndex, shouldAdd) => {
+    setSelectedProduct((prevState) => ([
+      ...prevState.map((currentProduct) => (
+        currentProduct.id === selectedProductIndex ? {
+          ...currentProduct,
+          qty: shouldAdd ? currentProduct.qty + 1 : currentProduct.qty - 1
+        } : currentProduct
+      ))
+    ]))
+  }
+
+  const deleteProduct = (selectedProductIndex) => {
+    setSelectedProduct((prevState) => ([
+      ...prevState.filter((currentProduct) => (
+        currentProduct.id !== selectedProductIndex 
+      ))
+    ]))
+  }
+
+  const totalCheck = () => {
+      let total = 0;
+      selectedProduct.forEach(order => {
+        total += order.price * order.qty;
+      });
+  
+      setTotal(total)
+      console.log('variable total', {total})
+  }
 
   useEffect(() => {
     GetAllProducts();
@@ -35,7 +77,7 @@ export const ItemsBox = () => {
       .then((r) => {
         if (r.status === 200) {
           r.json().then((data) => {
-            console.log(data);
+            // console.log(data);
             setProducts(data);
           });
         }
@@ -45,7 +87,7 @@ export const ItemsBox = () => {
       });
   };
 
-  console.log({ products });
+  // console.log({ products });
 
   return (
     <Fragment>
@@ -54,30 +96,28 @@ export const ItemsBox = () => {
           <div className='ProductContainer'>
             {products.map((product) => {
               return (
-                <>
-                  <div className='ProductImgInfo' key={product.id}>
-                    <div className='ProductImg'>
-                      <img src={product.image} alt='imagen de producto' />
-                    </div>
-                    <div className='productInfo'>
-                      <p className='nameProduct'>{product.name}</p>
-                      <p className='priceProduct'>${product.price}</p>
-                      <button
-                        className='addProduct'
-                        type='button'
-                        onClick={() => addSelectedProduct(product)}
-                      >
-                        Agregar
-                      </button>
-                    </div>
+                <div className='ProductImgInfo' key={product.id}>
+                  <div className='ProductImg'>
+                    <img src={product.image} alt='imagen de producto' />
                   </div>
-                </>
+                  <div className='productInfo'>
+                    <p className='nameProduct'>{product.name}</p>
+                    <p className='priceProduct'>${product.price}</p>
+                    <button
+                      className='addProduct'
+                      type='button'
+                      onClick={() => addSelectedProduct(product)}
+                    >
+                      Agregar
+                    </button>
+                  </div>
+                </div>
               );
             })}
           </div>
         </section>
         {/* <ClientOrder selectedProduct={selectedProduct}/> */}
-        <ItemsBoxResume selectedProduct={selectedProduct} />
+        <ItemsBoxResume selectedProduct={selectedProduct} modifyQty={modifyQty} deleteProduct={deleteProduct} total={total} totalCheck={totalCheck} />
       </div>
     </Fragment>
   );

@@ -19,6 +19,11 @@ export const MenuItems = () => {
                 Desayuno
               </a>
             </li>
+            <li className='nav-item '>
+              <a className='nav-link menuNav' href='#'>
+                Almuerzo y Cena
+              </a>
+            </li>
           </ul>
           <p className='titleOrder unstyle'>Cuenta:</p>
         </div>
