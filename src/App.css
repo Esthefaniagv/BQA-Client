@@ -152,10 +152,9 @@ body {
 
 /* Home Waiter */
 
-.waiterHome {
+.home {
   width: 100vw;
   height: 100%;
-
 }
 
 .unstyle {
@@ -392,6 +391,25 @@ body {
   width: 265px;
 }
 
+/* HOME CHEF */
+
+.chefContainer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleChefHome {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #757575;
+  margin: 0px;
+}
+
+/* --shadows: 7px 7px 7px rgba(0, 0, 0, 0.15); */
+
 /* FOOTER */
 
 .footer {
@@ -438,7 +456,7 @@ body {
     overflow: scroll;
   } */
 
-  .waiterHome {
+  .home {
     height: 100%;
   }
 

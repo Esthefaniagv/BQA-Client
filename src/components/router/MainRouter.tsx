@@ -2,7 +2,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom"
 import { Login } from "../Login"
 import { WaiterWelcome } from "../WaiterWelcome"
 import { ErrorRoute } from "../ErrorRoute"
-// import { ChefView } from "../ChefView"
+import { ChefView } from "../ChefView"
 
 
 
@@ -14,7 +14,7 @@ export function MainRouter() {
                 <Route path="/" element={<Login/>}/>
                 <Route path="/waiter" element={<WaiterWelcome/>}/>
                 <Route path="*" element={<ErrorRoute/>}/>
-                {/* <Route path="/chef" element={<ChefView orderData={orderData}/>}/> */}
+                <Route path="/chef" element={<ChefView/>}/>
             </Routes>
         </BrowserRouter>
     )
