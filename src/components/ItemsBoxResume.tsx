@@ -18,7 +18,7 @@ export const ItemsBoxResume = ({ selectedProduct, modifyQty, deleteProduct, tota
       client: clientName,
       products: selectedProduct,
       status: "pending",
-      dataEntry: new Date(), 
+      dataEntry: String(new Date().toLocaleTimeString('en-GB')), 
     }
     setOrderData(orderData)
     postKitchen(orderData).then((r) =>{

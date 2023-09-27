@@ -408,6 +408,17 @@ body {
   margin: 0px;
 }
 
+#cardsOrder{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.buttonStatus{
+  border: 1px solid #87C159;
+  border-radius: 10px;
+}
+
 /* --shadows: 7px 7px 7px rgba(0, 0, 0, 0.15); */
 
 /* FOOTER */
