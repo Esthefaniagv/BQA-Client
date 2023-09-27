@@ -13,30 +13,38 @@ export const LoginForm = () => {
     const formData = new FormData(e.target);
     const payLoad = Object.fromEntries(formData);
 
-    GetPostWaiter(payLoad).then((r) => {
-      if (r.status === 200) {
-        r.json().then((r) => {
-          console.log(r.user.role);
-          if (r.user.role === 'waiter') {
-            navigate('/waiter');
-          }
-        });
-      } else {
-        r.json().then((data) => {
-          console.log(data);
-          setIsError(data);
-        });
-      }
-    })
+    GetPostWaiter(payLoad)
+      .then((r) => {
+        if (r.status === 200) {
+          r.json().then((r) => {
+            localStorage.setItem('token', r.accessToken);
+            console.log(r.user.role);
+            if (r.user.role === 'waiter') {
+              navigate('/waiter');
+            }
+            if (r.user.role === 'chef') {
+              navigate('/chef');
+            }
+          });
+        } else {
+          r.json().then((data) => {
+            console.log(data);
+            setIsError(data);
+          });
+        }
+      })
       .catch((e) => {
         console.log('soy catch', e);
       });
-  
   };
 
   return (
     <Fragment>
-      <form className='form-group inputForm' onSubmit={SubmitForm} data-testid='formLogin'>
+      <form
+        className='form-group inputForm'
+        onSubmit={SubmitForm}
+        data-testid='formLogin'
+      >
         <div className='col-xs-1'>
           <input
             data-testid='formInputUser'

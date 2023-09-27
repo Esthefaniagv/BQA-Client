@@ -1,12 +1,44 @@
 import { useState } from "react"
 import { IProduct } from './ItemsBox';
+// import { ChefView } from "./ChefView";
+import { postKitchen } from "../services/TokenKitchen";
+import Swal from 'sweetalert2'
 
 export const ItemsBoxResume = ({ selectedProduct, modifyQty, deleteProduct, totalCheck, total }) => {
 
   const [clientName, setClientName] = useState('');
+  const [orderData, setOrderData] = useState({});
 
   const handleClientName = (e) => {
     setClientName(e.target.value)
+  }
+
+  const handleSendToKitchen = ()=>{
+    const orderData = {
+      client: clientName,
+      products: selectedProduct,
+      status: "pending",
+      dataEntry: String(new Date().toLocaleTimeString('en-GB')), 
+    }
+    setOrderData(orderData)
+    postKitchen(orderData).then((r) =>{
+      if (r.status === 201){
+        Swal.fire(
+          'Enviado a cocina!',
+          'Revisa el estado en Ver Pedidos',
+          'success'
+        )
+      }else{
+        Swal.fire(
+          'Ups! Error',
+          'No se ha podido realizar tu solicitud',
+          'error'
+        )
+      }
+    })
+
+
+    // orderData ? <ChefView orderData={orderData}/> : null
   }
 
   console.log('HOLA SOY', [...selectedProduct, clientName])
@@ -79,7 +111,7 @@ export const ItemsBoxResume = ({ selectedProduct, modifyQty, deleteProduct, tota
           <p className='totaltext'>TOTAL</p>
           <p className='totalResult'>{totalCheck()}{total}</p>
         </div>
-        <button
+        <button onClick={handleSendToKitchen} 
           data-testid='buttonLogin'
           className='btn btn-lg'
           type='submit'
@@ -88,8 +120,9 @@ export const ItemsBoxResume = ({ selectedProduct, modifyQty, deleteProduct, tota
           >
           ENVIAR A COCINA
         </button>
-      </div>
 
+      </div>
+     
     </>
   );
 };

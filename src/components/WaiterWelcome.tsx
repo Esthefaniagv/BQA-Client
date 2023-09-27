@@ -6,7 +6,7 @@ export const WaiterWelcome = () => {
 
     return (
         <Fragment>
-            <div className='waiterHome'>
+            <div className='home'>
                 <div className='welcomeContainer'>
                     <h2 className='titleWaiterHome'>Bienvenid@!</h2>
                     <button className='unstyle homeWaiterBtn'>Ver Pedidos <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-bell" viewBox="0 0 16 16">
