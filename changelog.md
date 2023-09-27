@@ -1,3 +1,22 @@
+## <1.2.0> - <2023-09-27>
+
+### Sprint learnings
+- Request con Patch
+- Implementación de props entre componentes
+- Guardar token de autorización
+- Uso de SweetAlert2
+
+### Added
+- Vista chef con visualización de órdenes enviadas por mesero
+- Eventos para modificar status del pedido a través de peticiones sobre la API
+- Mantener usuario loggeado con token de autorización
+- Agregar modal con SweetAlert2 para éxito y error de envío
+- Funcionalidad de agregar, sumar, restar y eliminar producto seleccionado
+
+### Changed
+- Nombres de clases css para compartir propiedades de estilo 
+
+
 ## <1.1.0> - <2023-09-20>
 
 ### Sprint learnings
