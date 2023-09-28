@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import { MenuItems } from './MenuItems';
-import WaiterDoneOrders from './WaiterDoneOrders';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -14,7 +13,6 @@ export const WaiterWelcome = () => {
             console.log('cannot enter requested site')
         }
     }
-
     return (
         <Fragment>
             <div className='home'>

@@ -3,7 +3,25 @@ import GetOrders from "../services/TokenOrders";
 
 export const WaiterDoneOrders = () => {
 
-const [allOrders, setAllOrders] = useState([]);
+    let OrdersStatus: "pending" | "delivered";
+    let Order: {
+        client: string;
+        products: product[];
+        userId: number,
+        status: OrdersStatus;
+        dataEntry: string;
+        dateProcessed: string;
+        id: string;
+    }
+    let product: {
+        id: number,
+        name: string,
+        price: number,
+        type: string,
+        qty: number
+    }
+
+    const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
         GetOrders()
@@ -17,12 +35,10 @@ const [allOrders, setAllOrders] = useState([]);
     }, []);
 
     return (
-        <>
-        {allOrders.filter((done) => {
-            console.log(allOrders)
-            done.status === 'delivered' ? <p>hola</p> : console.log('falso')
-        })}
-
+        <> 
+        {
+            JSON.stringify(allOrders.id : Order)
+        }
         </>
     );
 };
