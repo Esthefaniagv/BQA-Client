@@ -4,7 +4,7 @@ export const PatchDelivered = (orderIndex) => {
     const options = {
         method: 'PATCH',
         body: JSON.stringify({status: 'delivered',
-        dateProcessed: String(new Date().toLocaleTimeString('en-GB'))}),
+        dateProcessed: new Date().getTime()}),
 
         headers: {
           'content-type': 'application/json',

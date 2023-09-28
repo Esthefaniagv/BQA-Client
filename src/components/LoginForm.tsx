@@ -18,6 +18,7 @@ export const LoginForm = () => {
         if (r.status === 200) {
           r.json().then((r) => {
             localStorage.setItem('token', r.accessToken);
+            localStorage.setItem('user', r.user.role);
             console.log(r.user.role);
             if (r.user.role === 'waiter') {
               navigate('/waiter');

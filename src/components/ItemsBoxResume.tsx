@@ -18,7 +18,7 @@ export const ItemsBoxResume = ({ selectedProduct, modifyQty, deleteProduct, tota
       client: clientName,
       products: selectedProduct,
       status: "pending",
-      dataEntry: String(new Date().toLocaleTimeString('en-GB')), 
+      dataEntry: new Date().getTime(), 
     }
     setOrderData(orderData)
     postKitchen(orderData).then((r) =>{
@@ -40,8 +40,6 @@ export const ItemsBoxResume = ({ selectedProduct, modifyQty, deleteProduct, tota
 
     // orderData ? <ChefView orderData={orderData}/> : null
   }
-
-  console.log('HOLA SOY', [...selectedProduct, clientName])
 
   return (
     <>
