@@ -1,3 +1,4 @@
+import DoneOrderTime from "./DoneOrderTime";
 
 export const OrderTime = ({ start, done }) => {
 
@@ -14,9 +15,9 @@ export const OrderTime = ({ start, done }) => {
     //    const total = doneDate - startDate
 
     return (
-        <>
-            <p>{doneOrderTime}</p>
+        <>  
             <p>{total}:00 minutos</p>
+            
         </>
     )
 }

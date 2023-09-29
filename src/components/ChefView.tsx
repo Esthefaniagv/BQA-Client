@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { PatchDelivered } from '../services/TokenDelivered'
 import OrderTime from './OrderDate';
 import OrderPrevTime from './OrderPrevTime';
+import DoneOrderTime from './DoneOrderTime';
 
 export const ChefView = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -49,6 +50,7 @@ export const ChefView = () => {
               <div className='clientNameAndTime'>
                 <p>Cliente: {order.client}</p>
                 <OrderPrevTime time={order.dataEntry}/>
+                
                 {order.dateProcessed && <OrderTime start={order.dataEntry} done={order.dateProcessed}/>}
               </div>
 

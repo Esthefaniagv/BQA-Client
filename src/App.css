@@ -1,5 +1,5 @@
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap');
-@import 'bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap');
 
 #root {
@@ -17,9 +17,14 @@ body {
   place-items: center;
 }
 
-#tablediv{
-  position: relative;
-  bottom: 0;
+.btnTablet {
+  width: 50px;
+  height: 50px;
+  background: aquamarine !important;
+}
+
+.hiddenRow {
+  padding: 0 !important;
 }
 
 /* LOGIN */
@@ -411,13 +416,13 @@ body {
   margin: 0px;
 }
 
-#cardsOrder{
+#cardsOrder {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.buttonStatus{
+.buttonStatus {
   border: 1px solid #87C159;
   border-radius: 10px;
 }
