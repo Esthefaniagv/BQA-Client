@@ -23,6 +23,7 @@ export const WaiterDoneOrders = () => {
         name: string;
         price: number;
         type: string;
+        dataEntry: string;
         qty: number
     }
 
@@ -48,8 +49,6 @@ export const WaiterDoneOrders = () => {
     //     setAllOrders(filter)
     // }, [allOrders]);
 
-
-    console.log(allOrders)
     // const filterDeliveredProducts = (allOrders) => {
     //     // ...allOrders.filter((currentProduct: any) => (
     //     //     currentProduct.status === 'delivered'
@@ -72,8 +71,8 @@ export const WaiterDoneOrders = () => {
                 <tbody>
                     {allOrders.map((order: Order) => (
                         <>
-                            <tr data-toggle="collapse" data-target="#demo1" className="accordion-toggle">
-                                <td><button className="btn btn-default btn-xs btnTablet" key={order.id}>{order.id}</button></td>
+                            <tr>
+                                <td><button className="btn btn-default btn-xs btnTablet" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">{order.id}</button></td>
                                 {/* <th scope="column">{order.id}</th> */}
                                 <td key={order.id}>{order.client}</td>
                                 <td><OrderPrevTime time={order.dataEntry} /></td>
@@ -81,32 +80,46 @@ export const WaiterDoneOrders = () => {
                                 <td><OrderTime start={order.dataEntry} done={order.dateProcessed} /></td>
                                 <td>{order.status}</td>
                             </tr>
-                            <tr>
-                                <td className="hiddenRow">
-                                    <div className="accordian-body collapse" id="demo1">
-                                        <table className="table table-striped">
-                                            <thead>
-                                                <tr className="info">
-                                                    <th>Productos</th>
-                                                    <th>Cantidad</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr data-toggle="collapse" className="accordion-toggle" data-target="#demo10">
-                                                    <td>SANDWICH</td>
-                                                    <td>1</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
+
+                            <tr className="collapse" id="collapseExample">
+                                <th scope="col" >Productos</th>
+                                <th scope="col">Cantidad</th>
+                                </tr>
+                                {order.products.map((productInOrder) => (
+                                    <tr  className="collapse"  id="collapseExample" >
+                                        <td>{productInOrder.name}</td>
+                                        <td>{productInOrder.qty}</td>
+                                    </tr>
+                                ))}
+                            
                         </>
                     ))}
                 </tbody>
             </table>
-        </div>
+        </div >
     );
 };
 
 export default WaiterDoneOrders;
+
+
+{/* <tr>
+<td>
+    <div  id="demo1">
+        <table className="table table-striped">
+            <thead>
+                <tr className="info">
+                    <th>Productos</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-target="#demo10">
+                    <td>SANDWICH</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</td>
+</tr> */}
