@@ -17,16 +17,6 @@ body {
   place-items: center;
 }
 
-.btnTablet {
-  width: 50px;
-  height: 50px;
-  background: aquamarine !important;
-}
-
-.hiddenRow {
-  padding: 0 !important;
-}
-
 /* LOGIN */
 .imageLogin {
   height: 91vh;
@@ -173,8 +163,11 @@ body {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-size: 20px;
   border-radius: 20px;
-  text-decoration: underline #87C159;
+  border: 3px solid #54A525;
+  padding: 4px;
 }
+
+
 
 .welcomeContainer {
   height: 100px;
@@ -427,7 +420,74 @@ body {
   border-radius: 10px;
 }
 
+.allTimes{
+  display: flex;
+}
+
 /* --shadows: 7px 7px 7px rgba(0, 0, 0, 0.15); */
+
+/* ORDERS WAITER */
+
+.divTable {
+  width: 100vw;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.divIcons {
+  height: 125px;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 78px;
+  margin-top: 10px;
+}
+
+.burguerLogo {
+  width: 100px;
+  height: 100px;
+}
+
+.logOut {
+  width: 30px;
+  height: 30px;
+}
+
+.btnTable {
+  width: 40px;
+  height: 40px;
+  background: #A3E2E5 !important;
+}
+
+.eyeColor {
+  color: #757575 !important;
+
+}
+
+.hiddenRow {
+  padding: 0 !important;
+}
+
+
+
+.tableDesign {
+  width: 80% !important;
+  /* height: 80% !important; */
+
+}
+
+.tableTitle {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  background-color: #FFDEA4;
+  color: #024C67;
+  width: 80%;
+}
 
 /* FOOTER */
 
