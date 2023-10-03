@@ -1,7 +1,7 @@
-import { Fragment, useState } from 'react';
 import { LoginError } from './ErrorLogin';
 import { useNavigate } from 'react-router-dom';
-import GetPostWaiter from '../services/TokenService';
+import { GetPostWaiter } from '../services/TokenService';
+import { useState } from 'react';
 
 export const LoginForm = () => {
   const [isError, setIsError] = useState(null);
@@ -16,14 +16,14 @@ export const LoginForm = () => {
     GetPostWaiter(payLoad)
       .then((r) => {
         if (r.status === 200) {
-          r.json().then((r) => {
-            localStorage.setItem('token', r.accessToken);
-            localStorage.setItem('user', r.user.role);
-            console.log(r.user.role);
-            if (r.user.role === 'waiter') {
+          r.json().then((obj) => {
+            localStorage.setItem('token', obj.accessToken);
+            localStorage.setItem('user', obj.user.role);
+            console.log(obj.user.role);
+            if (obj.user.role === 'waiter') {
               navigate('/waiter');
             }
-            if (r.user.role === 'chef') {
+            if (obj.user.role === 'chef') {
               navigate('/chef');
             }
           });
@@ -40,7 +40,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <form
         className='form-group inputForm'
         onSubmit={SubmitForm}
@@ -89,7 +89,7 @@ export const LoginForm = () => {
         </div>
       </form>
       {isError && <LoginError message={isError} />}
-    </Fragment>
+    </>
   );
 };
 export default LoginForm;

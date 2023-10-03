@@ -429,12 +429,14 @@ body {
 /* ORDERS WAITER */
 
 .divTable {
-  width: 100vw;
-  height: 400px;
+  margin-top: 60px;
+  /* width: 80%; */
+  height: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
+  overflow: auto;
+  align-items: center;
 }
 
 .divIcons {
@@ -487,6 +489,7 @@ body {
   background-color: #FFDEA4;
   color: #024C67;
   width: 80%;
+  border-radius: 10px 10px 0 0
 }
 
 /* FOOTER */

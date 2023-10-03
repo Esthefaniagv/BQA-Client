@@ -12,4 +12,4 @@ export const GetPostWaiter = (payLoad) => {
 
 }
 
-export default GetPostWaiter;
+
