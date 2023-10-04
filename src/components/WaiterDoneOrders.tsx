@@ -4,9 +4,11 @@ import OrderTime from "./OrderTime";
 import OrderPrevTime from "./OrderPrevTime";
 import DoneOrderTime from "./DoneOrderTime";
 import { useNavigate } from "react-router-dom";
+import { CurrentOrder, CurrentProduct, Order, Product } from "../models/orders";
+import { PatchDelivered } from "../services/TokenDelivered";
 
 export const WaiterDoneOrders = () => {
-    const [allOrders, setAllOrders] = useState([]);
+    const [allOrders, setAllOrders] = useState<CurrentOrder[]>([]);
 
     const navigate = useNavigate()
     const handleClick = () => {
@@ -17,31 +19,14 @@ export const WaiterDoneOrders = () => {
     }
 
     // interface OrdersStatus "pending" | "delivered";
-    interface Order {
-        client: string;
-        products: product[];
-        userId: number;
-        status: "pending" | "delivered";
-        dataEntry: string;
-        dateProcessed: string;
-        id: string;
-    }
-    interface product {
-        id: number;
-        name: string;
-        price: number;
-        type: string;
-        dataEntry: string;
-        qty: number
-    }
 
 
     useEffect(() => {
         GetOrders()
             .then((res) => res.json())
             .then((data) => {
-                const filterDelivered = data.filter((currentProduct) => (
-                    currentProduct.status === 'delivered'))
+                const filterDelivered = data.filter((currentProduct: CurrentProduct) => (
+                    currentProduct.status === 'ready'))
                 setAllOrders(filterDelivered);
             })
             .catch((e) => {
@@ -50,27 +35,17 @@ export const WaiterDoneOrders = () => {
     }, []);
 
 
-
-    // useEffect(() => {
-
-    //     const filter = allOrders.filter((currentProduct: any) => (
-    //         currentProduct.status === 'delivered'))
-
-    //     setAllOrders(filter)
-    // }, [allOrders]);
-
-    // const filterDeliveredProducts = (allOrders) => {
-    //     // ...allOrders.filter((currentProduct: any) => (
-    //     //     currentProduct.status === 'delivered'
-    //     // ))
-    // }
-
-    const revertString = () => {
-        allOrders.map((order: Order) => {
-            String(order.id)
+const handleDeliveredOrder = (orderIndex:  number, shouldBeDelivered: boolean) =>{
+    PatchDelivered(orderIndex).then((res) =>{
+        res.json().then((updatedOrder) =>{
+            setAllOrders((prevState) => ([
+                ...prevState.map((currentOrder: CurrentOrder) => (
+                    currentOrder.id === orderIndex && shouldBeDelivered ? updatedOrder : currentOrder
+                ))
+            ]))
         })
-
-    }
+    })
+}
 
     return (
         <>
@@ -83,7 +58,6 @@ export const WaiterDoneOrders = () => {
                 <div className="tableTitle">Ordenes listas</div>
                 <table className="table overflow-auto tableDesign">
                     <thead>
-
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Cliente</th>
@@ -108,15 +82,18 @@ export const WaiterDoneOrders = () => {
                                     <td><OrderPrevTime time={order.dataEntry} /></td>
                                     <td><DoneOrderTime done={order.dateProcessed} /></td>
                                     <td><OrderTime start={order.dataEntry} done={order.dateProcessed} /></td>
-                                    <td>{order.status}</td>
+                                    <td><button className="unstyle btnDelivered" onClick={() => handleDeliveredOrder(order.id, true)}>{order.status}</button></td>
                                 </tr>
 
-                                <td className="collapse" id={`order${order.id}`}>
-                                    <table>
-                                <tr>
-                                    <th scope="col" >Productos</th>
-                                    <th scope="col">Cantidad</th>
-                                </tr>
+                                <tr className="collapse" id={`order${order.id}`} aria-colspan={3}>
+                                <td colSpan={3}>
+                                    <table className="table table-bordered detailOrder">
+                                <thead >
+                                    <tr >
+                                    <th scope="col" className="orderTitle">Productos</th>
+                                    <th scope="col" className="orderTitle">Cantidad</th>
+                                    </tr>
+                                </thead>
                                 {order.products.map((productInOrder) => (
                                     <tr>
                                         <td>{productInOrder.name}</td>
@@ -125,6 +102,7 @@ export const WaiterDoneOrders = () => {
                                 ))}
                                 </table>
                                 </td>
+                                </tr>
 
                             </>
                         ))}

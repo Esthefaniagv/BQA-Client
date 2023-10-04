@@ -4,8 +4,8 @@
 
 #root {
   position: relative;
-  max-width: 768px;
-  max-height: 1024px;
+  width: 768px;
+  height: 1024px;
   margin: 0px;
   text-align: center;
 }
@@ -449,6 +449,27 @@ body {
   margin-top: 10px;
 }
 
+.detailOrder{
+  margin-left: 97px;
+  width: 400px;
+  margin-bottom: 5px !important;
+  /* background-color: #FFDEA4; */
+}
+
+.btnDelivered{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #EEA734 !important;
+  color: white !important;
+  border-radius: 15px;
+  padding: 0.5rem 0.5rem;
+  /* margin-top: 9px; */
+}
+.orderTitle{
+  background-color: #FFDEA4 !important;
+}
+
 .burguerLogo {
   width: 100px;
   height: 100px;
@@ -506,7 +527,7 @@ body {
 @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
   #root {
     position: relative;
-    max-width: 1024px;
+    width: 1024px;
     height: 100%;
     margin: 0;
     padding: 0px;
