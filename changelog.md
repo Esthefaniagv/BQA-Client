@@ -1,3 +1,24 @@
+## <1.3.0> - <2023-10-04>
+
+### Sprint learnings
+- Componente Collapse de Bootstrap para implementar en tabla. 
+- Creación de types para eliminar errores Typescript y ESLINT. 
+- Uso de new Date y sus métodos para cálculo base de total minutos por órden. 
+- Configuración de Bootstrap
+- Uso de filter en la petición a la API.
+- Sobre posibles funcionalidades sobre una API creada con JSON.server.  
+
+
+### Added
+- Definir paleta de colores de la app. 
+- Creacion de componente de todas las ordenes delivered para user waiter.
+- Agregar filtrado de API.
+- Adicion de íconos para mejorar experiencia de usuario. 
+
+### Changed
+- Reordenamiento de test componente Login. 
+
+
 ## <1.2.0> - <2023-09-27>
 
 ### Sprint learnings

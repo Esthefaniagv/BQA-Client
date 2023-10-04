@@ -111,7 +111,8 @@ export const WaiterDoneOrders = () => {
                                     <td>{order.status}</td>
                                 </tr>
 
-                                <tr className="collapse" id={`order${order.id}`}>
+                                <td className="collapse" id={`order${order.id}`}>
+                                    <table>
                                 <tr>
                                     <th scope="col" >Productos</th>
                                     <th scope="col">Cantidad</th>
@@ -122,7 +123,8 @@ export const WaiterDoneOrders = () => {
                                         <td>{productInOrder.qty}</td>
                                     </tr>
                                 ))}
-                                </tr>
+                                </table>
+                                </td>
 
                             </>
                         ))}
