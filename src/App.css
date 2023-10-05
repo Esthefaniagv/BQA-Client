@@ -408,6 +408,9 @@ body {
   color: #FC5E93;
   margin: 0px;
 }
+.card{
+  margin-bottom: 20px;
+}
 
 #cardsOrder {
   /* display: grid;
@@ -424,15 +427,9 @@ body {
 .divCard{
   display: flex;
   justify-content:space-between;
-  background-color: #FFDEA4;
   height: 35px;
 }
-.bodycard{
-  display: flex;
-  flex-direction: column;
-  margin-top: -15px;
-  
-}
+
 .pClient{
   margin-left: 20px;
   color: #024C67;
@@ -454,10 +451,11 @@ body {
   font-weight: 700;
   font-size: 23px;
   color:#FC5E93;
+  margin-left: 20px;
 }
 .ulListProducts{
   display: flex;
-
+  margin-left: 33px;
 }
 .checkProducts{
   margin-right: 10px;
