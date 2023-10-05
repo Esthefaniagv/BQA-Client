@@ -16,7 +16,7 @@ export const OrderTime = ({ start, done }) => {
 
     return (
         <>  
-            <p>{total}:00 minutos</p>
+            <p>{total}:00 Min.</p>
             
         </>
     )
