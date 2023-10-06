@@ -105,7 +105,7 @@ export const ChefView = () => {
                         data-bs-target={`#order${order.id}`}
                         aria-expanded='false'
                         aria-controls={`order${order.id}`}
-                      > 
+                      >
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
                           width='25'
@@ -154,18 +154,7 @@ export const ChefView = () => {
                               type='checkbox'
                               aria-label='Checkbox for following text input'
                             />
-
-                            {r.name}
-                            <span className='product-qty'>
-                              {Array.from({ length: 35 - r.name.length }).map(
-                                (_, index) => (
-                                  <span key={index}>.</span>
-                                )
-                              )}{' '}
-                              x{r.qty}
-                            </span>
-
-                            {/* {r.name}________x{r.qty} */}
+                            {r.name}________x{r.qty}
                           </li>
                         </ul>
                       ))}

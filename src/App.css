@@ -417,6 +417,7 @@ body {
   grid-template-columns: repeat(2, 1fr); */
   gap: 20px;
   padding: 20px;
+  
 }
 
 .buttonStatus {
@@ -428,6 +429,7 @@ body {
   display: flex;
   justify-content:space-between;
   height: 35px;
+  background-color: #FFDEA4;
 }
 
 .pClient{

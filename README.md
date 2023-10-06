@@ -26,13 +26,14 @@ Para que se cumpla lo anterior, se crea una interfaz que se integra con una API 
 
 Se crearon 6 historias de usuario con el objetivo de armar un proyecto en etapas y contar con una mejor comprensión durante la planificación de sprints. 
 
-####Estas son: 
+#### Estas son: 
 
 ##### Historia de Usuario 1: Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 
 - ***Yo como meserx quiero poder ingresar al sistema de pedidos.***
  
  [x] **Criterios de Aceptación:**
+ 
 * Acceder a una pantalla de login.
 * Ingresar email y contraseña.
 * Recibir mensajes de error comprensibles, dependiendo de cuál es el error con la información ingresada.
@@ -41,7 +42,9 @@ Se crearon 6 historias de usuario con el objetivo de armar un proyecto en etapas
 ##### Historia de Usuario 2: Mesero/a debe poder tomar pedido de cliente/a
 
 ***Yo como meserx quiero tomar el pedido de unx clientx para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.***
+
 [x] **Criterios de Aceptación:**
+
 * Anotar nombre de clientx.
 * Agregar productos al pedido.
 * Eliminar productos.
