@@ -4,11 +4,12 @@ import { ItemsBox } from './ItemsBox';
 import { Fragment, useEffect, useState } from 'react';
 
 export const MenuItems = () => {
-
   const [products, setProducts] = useState<IProduct[]>([]);
+  const [menu, setMenu] = useState<IProduct[]>([]);
 
   useEffect(() => {
     GetAllProducts();
+    handleMenu('Desayuno');
   }, []);
 
   const GetAllProducts = () => {
@@ -16,7 +17,6 @@ export const MenuItems = () => {
       .then((r) => {
         if (r.status === 200) {
           r.json().then((data) => {
-            // console.log(data);
             setProducts(data);
           });
         }
@@ -26,13 +26,59 @@ export const MenuItems = () => {
       });
   };
 
+  // let itemMenu = 'Desayuno';
+    
+    const handleMenu = (item: string) => {
+      
+      const filteredMenu = item ? products.filter((product)=> product.type === item):products
+      
+      setMenu(filteredMenu);
+    }
+
+  // const handleMenu = (item) => {
+  //   setProducts((prevState) => ([
+  //     ...prevState.filter((currentProduct) => (
+  //      item ? currentProduct.type === "Desayuno" : currentProduct.type === "Almuerzo"
+  //     )) 
+  //   ]))
+
+  //   // if (item === true) {
+  //   //   products.filter((menuBreakfast)=>{
+  //   //     menuBreakfast.type === "Desayuno" ? setProducts(menuBreakfast) : null;
+  //   //   })
+  //   // } else {
+  //   //   products.filter((menuLunch)=>{
+  //   //     menuLunch.type === "Almuerzo" ? setProducts(menuLunch) : null;
+  //   //   })
+  //   // }
+  // };
+
   return (
     <Fragment>
       <div className='menuItems'>
         <div className='divItemsNav'>
           <ul className='nav nav-underline navItems'>
+          <li className='nav-item'>
+          <a
+                type='button'
+                onClick={() => setProducts(products)}
+                className='nav-link menuNav'
+                aria-current='page'
+                href='#'
+              >
+                Productos
+              </a>
+            </li>
             <li className='nav-item '>
+              
+              
+              {/* /* {products.filter((itemProduct)=>{
+                itemProduct.type === 'Desayuno' && <ItemsBox itemProduct={itemProduct}/>;
+              })} */}
+
               <a
+                type='button'
+                onClick={() => handleMenu('Desayuno')}
                 className='nav-link menuNav'
                 aria-current='page'
                 href='#'
@@ -41,24 +87,23 @@ export const MenuItems = () => {
               </a>
             </li>
             <li className='nav-item '>
-              <a className='nav-link menuNav' href='#'>
+              <a
+                className='nav-link menuNav'
+                href='#'
+                type='button'
+                onClick={() => handleMenu('Almuerzo')}
+              >
                 Almuerzo y Cena
               </a>
             </li>
           </ul>
           <p className='titleOrder unstyle'>Cuenta:</p>
         </div>
-        <ItemsBox products = {products} />
+        {/* { products && <ItemsBox products = {products} />} */}
+        <ItemsBox products= {menu}/>
       </div>
-
     </Fragment>
   );
 };
 
 
-
-{/* <li className='nav-item '>
-  <a className='nav-link menuNav' href='#'>
-    Almuerzo y Cena
-  </a>
-</li> */}

@@ -469,7 +469,7 @@ body {
   color:#67871F;
 }
 
-.dateChef{
+.date{
   color: #67871F;
 }
 .product-name {
@@ -513,6 +513,7 @@ body {
   margin-bottom: 5px !important;
   /* background-color: #FFDEA4; */
 }
+
 
 .btnDelivered{
   font-family: 'Zen Kaku Gothic Antique', sans-serif;

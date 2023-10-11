@@ -28,8 +28,9 @@ export const ItemsBox = ({products}) => {
         qty: 1
       }]);
     }
-
   };
+
+
 
   const modifyQty = (selectedProductIndex, shouldAdd) => {
     setSelectedProduct((prevState) => ([
@@ -59,6 +60,8 @@ export const ItemsBox = ({products}) => {
       setTotal(total)
       console.log('variable total', {total})
   }
+
+  
 
   // useEffect(() => {
   //   GetAllProducts();
