@@ -1,3 +1,17 @@
+## <1.4.0> - <2023-10-11>
+
+### Sprint learnings
+-Profundizar en el uso de UseEffect.
+-Implementación de filtros para manejar la data de forma dinámica
+-Profundizar en tablas con boostrap
+
+### Added
+-Funcionalidad de cambio de color según status y cambio de status
+-Creación de componente vista Admin junto con su enrutamiento
+
+### Changed
+Reordenamiento de componentes y petición para proceder a filtro de menu según desayuno u otras comidas
+
 ## <1.3.0> - <2023-10-04>
 
 ### Sprint learnings
