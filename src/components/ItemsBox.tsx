@@ -30,8 +30,6 @@ export const ItemsBox = ({products}) => {
     }
   };
 
-
-
   const modifyQty = (selectedProductIndex, shouldAdd) => {
     setSelectedProduct((prevState) => ([
       ...prevState.map((currentProduct) => (

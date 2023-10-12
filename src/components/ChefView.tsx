@@ -58,7 +58,7 @@ export const ChefView = () => {
             src='./public/img/hamburguerlogo.png'
             alt='burguer logo'
           />
-          <h2>Pedidos</h2>
+          <h2>Órdenes de Cocina</h2>
           <img
             className='logOut'
             src='./public/img/exit.png'
@@ -120,18 +120,18 @@ export const ChefView = () => {
                     </button>
                     </th>
                     <th>
-                      <OrderPrevTime time={order.dataEntry} />
+                     <p className='pTh'> <OrderPrevTime time={order.dataEntry} /></p>
                     </th>
-                    <th>
-                      <DoneOrderTime done={order.dateProcessed} />
+                    <th >
+                     <p className='pTh'> <DoneOrderTime done={order.dateProcessed} /> </p>
                     </th>
-                    <th>
-                      {order.dateProcessed && (
+                    <th >
+                      <p className='pTh'>{order.dateProcessed && (
                         <OrderTime
                           start={order.dataEntry}
                           done={order.dateProcessed}
-                        />
-                      )}
+                        /> 
+                      )}</p>
                     </th>
                     <th>
                       <button

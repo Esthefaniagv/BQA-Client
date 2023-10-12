@@ -72,7 +72,7 @@ export const WaiterDoneOrders = () => {
             alt='burguer logo'
             onClick={handleClick}
           />
-          <h2>Pedidos</h2>
+          <h2>Órdenes para entregar</h2>
           <img
             className='logOut'
             src='./public/img/exit.png'
@@ -164,7 +164,7 @@ export const WaiterDoneOrders = () => {
                       {order.products.map((productInOrder) => (
                         <ul className='ulListProducts unstyle'>
                           <li className='card-text'>{productInOrder.name}</li>
-                          <li className='card-text'>{productInOrder.qty}</li>
+                          <li className='card-text'>x {productInOrder.qty}</li>
                         </ul>
                       ))}
                     </td>

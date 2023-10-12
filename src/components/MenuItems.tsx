@@ -9,8 +9,13 @@ export const MenuItems = () => {
 
   useEffect(() => {
     GetAllProducts();
-    handleMenu('Desayuno');
+    
   }, []);
+
+  useEffect(() => {
+    handleMenu('Desayuno');
+    
+  }, [products]);
 
   const GetAllProducts = () => {
     GetProducts()
@@ -18,6 +23,7 @@ export const MenuItems = () => {
         if (r.status === 200) {
           r.json().then((data) => {
             setProducts(data);
+            
           });
         }
       })
@@ -30,8 +36,7 @@ export const MenuItems = () => {
     
     const handleMenu = (item: string) => {
       
-      const filteredMenu = item ? products.filter((product)=> product.type === item):products
-      
+      const filteredMenu = item ? products.filter((product) => product.type === item) : products;
       setMenu(filteredMenu);
     }
 
@@ -58,17 +63,6 @@ export const MenuItems = () => {
       <div className='menuItems'>
         <div className='divItemsNav'>
           <ul className='nav nav-underline navItems'>
-          <li className='nav-item'>
-          <a
-                type='button'
-                onClick={() => setProducts(products)}
-                className='nav-link menuNav'
-                aria-current='page'
-                href='#'
-              >
-                Productos
-              </a>
-            </li>
             <li className='nav-item '>
               
               
