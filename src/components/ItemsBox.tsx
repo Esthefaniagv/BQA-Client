@@ -1,27 +1,19 @@
-import { Fragment, useEffect, useState } from 'react';
-import GetProducts from '../services/TokenProducts';
+import { Fragment, useState } from 'react';
 import { ItemsBoxResume } from './ItemsBoxResume';
+import { IProduct } from '../models/orders';
 
-export const ItemsBox = () => {
-  let IProduct: {
-    id: number;
-    name: string;
-    price: number;
-    image: string;
-    type: string;
-    dateEntry: string;
-    qty: number;
-  };
-  const [products, setProducts] = useState<(typeof IProduct)[]>([]);
+export const ItemsBox = ({products}) => {
+
+  // const [products, setProducts] = useState<(typeof IProduct)[]>([]);
 
   //seleccionar el id, guardarlo y mostrarlo en itemsBoxResume
-  const [selectedProduct, setSelectedProduct] = useState<typeof IProduct[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<IProduct[]>([]);
 
   //guardar valor de cuenta total 
   const [total, setTotal] = useState(0)
 
   // Para que se agreguen varios productos en la orden de pedido 
-  const addSelectedProduct = (product: typeof IProduct) => {
+  const addSelectedProduct = (product: IProduct) => {
     if (selectedProduct.some(x => x.id === product.id)) {
       setSelectedProduct((prevState) => ([
         ...prevState.map((currentProduct) => ({
@@ -36,7 +28,6 @@ export const ItemsBox = () => {
         qty: 1
       }]);
     }
-
   };
 
   const modifyQty = (selectedProductIndex, shouldAdd) => {
@@ -68,24 +59,26 @@ export const ItemsBox = () => {
       console.log('variable total', {total})
   }
 
-  useEffect(() => {
-    GetAllProducts();
-  }, []);
+  
 
-  const GetAllProducts = () => {
-    GetProducts()
-      .then((r) => {
-        if (r.status === 200) {
-          r.json().then((data) => {
-            // console.log(data);
-            setProducts(data);
-          });
-        }
-      })
-      .catch((e) => {
-        console.log('soy catch', e);
-      });
-  };
+  // useEffect(() => {
+  //   GetAllProducts();
+  // }, []);
+
+  // const GetAllProducts = () => {
+  //   GetProducts()
+  //     .then((r) => {
+  //       if (r.status === 200) {
+  //         r.json().then((data) => {
+  //           // console.log(data);
+  //           setProducts(data);
+  //         });
+  //       }
+  //     })
+  //     .catch((e) => {
+  //       console.log('soy catch', e);
+  //     });
+  // };
 
   // console.log({ products });
 

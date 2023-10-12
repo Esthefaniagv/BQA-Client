@@ -4,6 +4,7 @@ import { WaiterWelcome } from "../WaiterWelcome"
 import { ErrorRoute } from "../ErrorRoute"
 import { ChefView } from "../ChefView"
 import WaiterDoneOrders from "../WaiterDoneOrders"
+import { AdminView } from "../AdminView"
 
 
 
@@ -17,6 +18,7 @@ export function MainRouter() {
                 <Route path="*" element={<ErrorRoute/>}/>
                 <Route path="/chef" element={<ChefView/>}/>
                 <Route path="/orders" element={<WaiterDoneOrders />}/>
+                <Route path="/admin" element={<AdminView/>}/>
             </Routes>
         </BrowserRouter>
     )
