@@ -24,6 +24,14 @@ export const AdminProducts = () => {
       />
     </div>
     <hr />
+
+    <header className='headerAdmin'>
+      <div className='headerAdminContent'>
+      <h2>Productos</h2>
+      <p>Accede al detalle de los productos</p> 
+      </div>
+      <button className='unstyle btnCreate'>Crear</button>
+    </header>
     </div>
     </>
   )
