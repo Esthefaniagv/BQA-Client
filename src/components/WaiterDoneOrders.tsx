@@ -72,7 +72,7 @@ export const WaiterDoneOrders = () => {
             alt='burguer logo'
             onClick={handleClick}
           />
-          <h2>Órdenes para entregar</h2>
+          <h2 className='titleHeader'>Órdenes para entregar</h2>
           <img
             className='logOut'
             src='./public/img/exit.png'

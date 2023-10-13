@@ -58,7 +58,7 @@ export const ChefView = () => {
             src='./public/img/hamburguerlogo.png'
             alt='burguer logo'
           />
-          <h2>Órdenes de Cocina</h2>
+          <h2 className='titleHeader'>Órdenes de Cocina</h2>
           <img
             className='logOut'
             src='./public/img/exit.png'

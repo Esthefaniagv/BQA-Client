@@ -26,6 +26,9 @@ export const LoginForm = () => {
             if (obj.user.role === 'chef') {
               navigate('/chef');
             }
+            if (obj.user.role === 'admin') {
+              navigate('/admin');
+            }
           });
         } else {
           r.json().then((data) => {

@@ -5,6 +5,8 @@ import { ErrorRoute } from "../ErrorRoute"
 import { ChefView } from "../ChefView"
 import WaiterDoneOrders from "../WaiterDoneOrders"
 import { AdminView } from "../AdminView"
+import { AdminWorkers } from "../AdminWorkers"
+import { AdminProducts } from "../AdminProducts"
 
 
 
@@ -19,6 +21,9 @@ export function MainRouter() {
                 <Route path="/chef" element={<ChefView/>}/>
                 <Route path="/orders" element={<WaiterDoneOrders />}/>
                 <Route path="/admin" element={<AdminView/>}/>
+                <Route path="/workers" element={<AdminWorkers/>}/>
+                <Route path="/products" element={<AdminProducts/>}/>
+                
             </Routes>
         </BrowserRouter>
     )

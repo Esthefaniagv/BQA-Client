@@ -8,6 +8,13 @@ export const AdminView = () => {
     navigate('/admin');
   };
 
+  const handleClickWorkers = () => {
+    navigate('/workers');
+  };
+  const handleClickProducts = () => {
+    navigate('/products');
+  };
+
   return (
     <Fragment>
       <div className='home'>
@@ -17,7 +24,7 @@ export const AdminView = () => {
             src='./public/img/hamburguerlogo.png'
             alt='burguer logo'
           />
-          <h2>Bienvenid@</h2>
+          <h2 className='titleHeader'>Bienvenid@</h2>
           <img
             className='logOut'
             src='./public/img/exit.png'
@@ -26,12 +33,21 @@ export const AdminView = () => {
           />
         </div>
         <hr />
-      </div>
+     
 
+    <div className='gridAdmin'>
+    <button className='divCardsOptions unstyle' onClick={handleClickWorkers} > 
+      <h2 className='titleOptions'>Trabajadores</h2>
+      <img className='imgIcon' src='public\img\user.png' alt='userIcon'/>
+    </button>
 
-    <div>Administrar Trabajadores</div>
-    <div>Administrar Productos</div>
+    <button className='divCardsOptions unstyle' onClick={handleClickProducts}>
+      <h2 className='titleOptions'>Productos</h2>
+      <img className='imgIcon' src='public\img\menu.png' alt='productIcon'/>
+    </button>
+    </div>
 
+    </div>
     </Fragment>
   );
 };
