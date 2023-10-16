@@ -586,6 +586,13 @@ body {
 }
 
 /* ADMIN HOME VIEW */
+.homeAdmin{
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   .gridAdmin{
     display: grid;
     height: 60%;
@@ -613,7 +620,82 @@ body {
   width: 290px;
   
 }
-
+/* Tabla Admin  */
+.divContentAdmin{
+  display: flex;
+  flex-direction: column;
+  width: 93%;
+}
+.hr{
+  width: 100vw;
+  color: inherit;
+}
+.tableHeader{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+.thGray{
+  color: #B5B5C3 !important;
+}
+.tableHeader th:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+  .tableHeader th:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+  .table > thead > tr > th {
+    border: none !important;
+  }
+  .tableFont{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  }
+  .btnEdit{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: #A3E2E5;
+    width: 90px;
+    height: 40px;
+    color: white;
+    margin-right: 5px;
+  }
+  .btnDelete{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: #EE4424;
+    width: 90px;
+    height: 40px;
+    color: white;
+  }
+.btnCreate{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 6px;
+  background-color: #EEA734;
+  width: 100px;
+  height: 50px;
+  color: white;
+}
+.headerAdmin{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  display: flex;
+  /* width: 90%; */
+  justify-content: space-between;
+  align-items: center;
+}
+.headerAdmin p{
+  color: #6C757D;
+}
+.headerAdminContent{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 /* CSS */
 /* .button-30 {
   align-items: center;
