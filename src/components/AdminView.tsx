@@ -5,7 +5,7 @@ export const AdminView = () => {
   const navigate = useNavigate();
 
   const handleLogOut = () => {
-    navigate('/admin');
+    navigate('/');
   };
 
   const handleClickWorkers = () => {
