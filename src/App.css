@@ -696,6 +696,27 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
+/* Modal CREAR Y EDITAR */
+.modalTitles{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  flex-direction: column;
+}
+.modal-body{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  display: flex;
+  justify-content: space-around;
+}
+.modal-body ::placeholder{
+  color: #a5aaae !important;
+}
+.createForm{
+  width: 80%;
+}
+.modal-footer button{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: white;
+  background-color: #54A525;
+}
 /* CSS */
 /* .button-30 {
   align-items: center;
