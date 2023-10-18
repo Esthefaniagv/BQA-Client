@@ -5,6 +5,7 @@ import { IWorkers } from '../models/workers';
 import Swal from 'sweetalert2';
 import DeleteWorker from '../services/TokenDeleteWorker';
 import { PostWorker } from '../services/TokenAddWorker';
+import { ModalEditWorker } from './modalEditWorker';
 
 export const AdminWorkers = () => {
   const [workers, setWorkers] = useState<IWorkers[]>([]);
@@ -12,6 +13,9 @@ export const AdminWorkers = () => {
   const [addEmail, setAddEmail] = useState('');
   const [addPassword, setAddPassword] = useState('');
   const [addRole, setAddRole] = useState('');
+
+  const [buttonClicked, setButtonClicked] = useState(false);
+  const [singleWorker, setSingleWorker] = useState({});
 
   useEffect(() => {
     GetAllWorkers();
@@ -37,36 +41,34 @@ export const AdminWorkers = () => {
     navigate('/');
   };
 
-  // const createProduct =()=>{
-
-  // }
   const userData = {
+    name: addName,
     email: addEmail,
     password: addPassword,
-    name: addName,
     role: addRole,
   };
 
   const handleCreateUser = () => {
-    PostWorker(userData).then((response)=>{
-      if(response.status === 201) {
-        Swal.fire(
-          'Usuario Creado!',
-          'Usuario creado con éxito',
-          'success'
-        )
-      } else{
-        Swal.fire(
-          'Ups! Error',
-          'No se ha podido realizar tu solicitud',
-          'error'
-        )
-      }
-    })
-     .catch((e)=>{
-      console.error(e.message)
-     })
-      
+    PostWorker(userData)
+      .then((response) => {
+        if (response.status === 201) {
+          Swal.fire('Usuario Creado!', 'Usuario creado con éxito', 'success');
+        } else {
+          Swal.fire(
+            'Ups! Error',
+            'No se ha podido realizar tu solicitud',
+            'error'
+          );
+        }
+      })
+      .catch((e) => {
+        console.error(e.message);
+      });
+  };
+
+  const handleEditWorker = (worker) => {
+    setButtonClicked(true);
+    setSingleWorker(worker);
   };
 
   const confirmDelete = (id: number) => {
@@ -87,6 +89,7 @@ export const AdminWorkers = () => {
       }
     });
   };
+
   return (
     <>
       <div className='homeAdmin'>
@@ -139,9 +142,9 @@ export const AdminWorkers = () => {
             </thead>
             <tbody>
               {workers.map((worker) => (
-                <tr>
+                <tr key={worker.id}>
                   {/* <th scope="row">1</th> */}
-                  <td>{worker.email.split('@')[0]}</td>
+                  <td>{worker.name}</td>
                   <td>Completa</td>
                   <td>{worker.email}</td>
                   <td>{worker.role}</td>
@@ -151,9 +154,13 @@ export const AdminWorkers = () => {
                       className='btnEdit unstyle '
                       data-bs-toggle='modal'
                       data-bs-target='#editModal'
+                      onClick={() => handleEditWorker(worker)}
                     >
                       EDITAR
                     </button>
+                    {buttonClicked ? (
+                      <ModalEditWorker user={singleWorker} />
+                    ) : null}
                   </td>
                   <td>
                     <button
@@ -168,100 +175,12 @@ export const AdminWorkers = () => {
             </tbody>
           </table>
         </div>
-        {/* Modal Editar */}
-        <div
-          className='modal fade'
-          id='editModal'
-          tabindex='-1'
-          aria-labelledby='exampleModalLabel'
-          aria-hidden='true'
-        >
-          <div className='modal-dialog'>
-            <div className='modal-content'>
-              <div className='modal-header modalTitles border border-0'>
-                <button
-                  type='button'
-                  className='btn-close'
-                  data-bs-dismiss='modal'
-                  aria-label='Close'
-                ></button>
-                <h1 className='modal-title fs-2' id='exampleModalLabel'>
-                  Editar Usuario
-                </h1>
-                <p>Rellena los campos para editar trabajador</p>
-              </div>
 
-              <div className='modal-body'>
-                <form className='createForm'>
-                  <div className='mb-3'>
-                    <input
-                      type='text'
-                      className='form-control'
-                      id='recipient-name'
-                      placeholder='Nombre'
-                    />
-                  </div>
-                  <div className='mb-3'>
-                    <input
-                      type='text'
-                      className='form-control'
-                      id='recipient-name'
-                      placeholder='Email'
-                    />
-                  </div>
-                  <div className='mb-3'>
-                    <input
-                      type='password'
-                      className='form-control'
-                      id='recipient-name'
-                      placeholder='Contraseña'
-                    />
-                  </div>
-                  <div className='dropdown'>
-                    <button
-                      className='btn border dropdown-toggle'
-                      type='button'
-                      data-bs-toggle='dropdown'
-                      aria-expanded='false'
-                    >
-                      Selecciona rol de trabajador
-                    </button>
-                    <ul className='dropdown-menu'>
-                      <li>
-                        <a className='dropdown-item' href='#'>
-                          Admin
-                        </a>
-                      </li>
-                      <li>
-                        <a className='dropdown-item' href='#'>
-                          Chef
-                        </a>
-                      </li>
-                      <li>
-                        <a className='dropdown-item' href='#'>
-                          Waiter
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </div>
-              <div className='modal-footer border border-0 my-4'>
-                <button
-                  type='button'
-                  className='btn btn-secondary col-8 position-absolute start-50 translate-middle-x border'
-                >
-                  GUARDAR CAMBIOS
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
         {/* Modal Crear */}
         <div
           className='modal fade'
           id='createModal'
-          tabindex='-1'
+          // tabindex='-1'
           aria-labelledby='exampleModalLabel'
           aria-hidden='true'
         >
@@ -286,7 +205,7 @@ export const AdminWorkers = () => {
                     <input
                       type='text'
                       className='form-control'
-                      id='recipient-name'
+                      // id='recipient-name'
                       placeholder='Nombre'
                       onChange={(e) => setAddName(e.target.value)}
                     />
@@ -295,7 +214,7 @@ export const AdminWorkers = () => {
                     <input
                       type='text'
                       className='form-control'
-                      id='recipient-name'
+                      // id='recipient-name'
                       placeholder='Email'
                       onChange={(e) => setAddEmail(e.target.value)}
                     />
@@ -304,12 +223,13 @@ export const AdminWorkers = () => {
                     <input
                       type='password'
                       className='form-control'
-                      id='recipient-name'
+                      // id='recipient-name'
                       placeholder='Contraseña'
                       onChange={(e) => setAddPassword(e.target.value)}
                     />
                   </div>
-                  <select value={addRole}
+                  <select
+                    value={addRole}
                     className='form-select'
                     aria-label='Default select example'
                     onChange={(e) => setAddRole(e.target.value)}
