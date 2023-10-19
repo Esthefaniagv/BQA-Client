@@ -22,13 +22,14 @@ export type Order = {
   dateProcessed: string;
   id: number;
 };
-export type Product = {
+
+export type OneProduct = {
   id: number;
   name: string;
   price: number;
   type: string;
-  dataEntry: string;
-  qty: number;
+  image: string;
+  dateEntry: string;
 };
 
 export type IProduct = {
