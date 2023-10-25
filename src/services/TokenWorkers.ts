@@ -7,6 +7,6 @@ export const GetWorkers = () => {
             'authorization': 'Bearer '+token
         },
     };
-    return fetch('http://localhost:8080/users', options);
+    return fetch('https://bqapimock.onrender.com/users', options);
 }
 export default GetWorkers;

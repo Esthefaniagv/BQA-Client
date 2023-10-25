@@ -8,6 +8,6 @@ export const DeleteWorker = (id : number) => {
             authorization: 'Bearer ' + token,
         },
     };
-    return fetch('http://localhost:8080/users/' + id, options)
+    return fetch('https://bqapimock.onrender.com/users/' + id, options)
 }
 export default DeleteWorker;

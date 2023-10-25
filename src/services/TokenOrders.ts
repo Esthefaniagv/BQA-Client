@@ -7,6 +7,6 @@ export const GetOrders = () => {
             'authorization': 'Bearer '+token
         },
     };
-    return fetch('http://localhost:8080/orders', options);
+    return fetch('https://bqapimock.onrender.com/orders', options);
 }
 export default GetOrders;

@@ -9,5 +9,5 @@ export const postKitchen = (orderData) => {
       authorization: 'Bearer ' + token,
     },
   };
-  return fetch('http://localhost:8080/orders', options);
+  return fetch('https://bqapimock.onrender.com/orders', options);
 };

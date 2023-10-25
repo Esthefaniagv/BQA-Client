@@ -7,7 +7,7 @@ export const DeleteProduct = (id: number) => {
             authorization: 'Bearer ' + token,
         },
     }
-    return fetch('http://localhost:8080/products/' + id, options);
+    return fetch('https://bqapimock.onrender.com/products/' + id, options);
 }
 
 export default DeleteProduct;

@@ -9,5 +9,5 @@ export const PatchWorker = (workerId: number, workerNewData) => {
             authorization: 'Bearer ' + token,
         },
     };
-    return fetch('http://localhost:8080/users/' + workerId, options);
+    return fetch('https://bqapimock.onrender.com/users/' + workerId, options);
 }

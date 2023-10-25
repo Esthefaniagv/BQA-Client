@@ -8,7 +8,7 @@ export const GetPostWaiter = (payLoad) => {
             'content-type': 'application/json',
         },
     };
-    return fetch('http://localhost:8080/login', options)
+    return fetch('https://bqapimock.onrender.com/login', options)
 
 }
 

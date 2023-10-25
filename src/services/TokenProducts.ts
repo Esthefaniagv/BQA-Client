@@ -7,7 +7,7 @@ export const GetProducts = () => {
       authorization: 'Bearer ' + token,
     },
   };
-  return fetch('http://localhost:8080/products', options);
+  return fetch('https://bqapimock.onrender.com/products', options);
 };
 
 export default GetProducts;

@@ -9,5 +9,5 @@ export const PatchDelivered = (orderIndex) => {
             authorization: 'Bearer ' + token,
         },
     };
-    return fetch('http://localhost:8080/orders/' + orderIndex, options);
+    return fetch('https://bqapimock.onrender.com/orders/' + orderIndex, options);
 }

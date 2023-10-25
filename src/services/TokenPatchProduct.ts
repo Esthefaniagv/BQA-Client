@@ -9,5 +9,5 @@ export const PatchProduct = (productId: number, productNewData) => {
             authorization: 'Bearer ' + token,
         },
     };
-    return fetch('http://localhost:8080/products/' + productId, options);
+    return fetch('https://bqapimock.onrender.com/products/' + productId, options);
 }
